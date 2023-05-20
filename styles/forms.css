@@ -1,0 +1,273 @@
+/* Fomrs */
+
+.step-back-container {
+  background-color: var(--white);
+  border-radius: var(--border-radius-20);
+  padding: var(--p);
+  margin: var(--mb);
+}
+
+.forms-container {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius-20);
+  padding: var(--ptb-medium);
+}
+
+form .field label {
+  font-weight: 400;
+  font-size: 1rem;
+}
+form .field input {
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+}
+.field input[type="text"]:focus,
+.field input[type="number"]:focus,
+textarea:focus {
+  border: 1px solid var(--green);
+  outline: none;
+}
+
+::placeholder {
+  font-weight: 400;
+  /* color:#AFB2B3; */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint {
+  font-weight: 100;
+}
+
+.field label,
+input,
+textarea {
+  width: 100%;
+  display: flex;
+}
+
+.field label {
+  padding-right: var(--pr);
+  /* text-transform: capitalize; */
+}
+
+.field input,
+textarea {
+  appearance: none;
+  height: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-10);
+  padding: var(--p);
+}
+
+.field textarea {
+  height: 8rem;
+}
+
+fieldset {
+  appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  /* border: 1px solid darkblue; */
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+.input-group .kr {
+  position: absolute;
+  background-color: var(--border);
+  width: 48px;
+  height: 100%;
+  border-radius: var(--border-radius-right-10);
+  border: 1px solid var(--border);
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+}
+
+.two-inputs-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Radio Buttons Toolbar */
+
+.radio-toolbar {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  /* flex-grow: 4; */
+  /* float: left; */
+}
+
+/* Hiden radio circles */
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+/* Design of labels */
+.radio-toolbar label {
+  min-width: calc(100% - 0.5rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--white);
+  padding: var(--p);
+  font-family: var(--font);
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius-10);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+/* use the :checked selector and the “adjacent sibling” selector (+ sign). So this CSS rule applies to any label that immediately follows a checked radio button. */
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: var(--white);
+  border: 1px solid var(--green);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+/* When focus  */
+/* .radio-toolbar input[type="radio"]:focus + label {
+    border-color: 1px solid var(--border);
+  } */
+
+/* When hover  */
+.radio-toolbar label:hover {
+  background-color: var(--border);
+}
+
+/* input[type="radio"] {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    margin: 0 1rem;
+  }
+  input[type="radio"]:checked::after {
+    width: 1rem;
+    height: 1rem;
+    background: green;
+    border-radius: 50%;
+    content: "";
+  } */
+
+.amount-expected {
+  /* background-color: var(--ligh-blue); */
+  color: var(--dark-blue);
+  padding: var(--p);
+  margin: var(--mtb);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  /* border-radius: var(--border-radius-10); */
+}
+
+/* Forms Validation */
+
+/* Valid */
+/* input[type="text"]:not(:focus):not(:placeholder-shown):valid {
+    border-color: green;
+  } */
+
+/* Invalid */
+/* input[type="text"]:not(:focus):not(:placeholder-shown):invalid {
+    border-color: red;
+  } */
+
+input[type="text"]:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+  display: block;
+}
+
+.error-message {
+  display: none;
+  font-weight: 500;
+  color: var(--orange);
+}
+
+/* button */
+
+.btn-form:disabled {
+  opacity: 0.5;
+}
+
+.btn-form {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 15px 32px;
+  text-decoration: none;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: var(--border-radius-10);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-form:hover {
+  font-family: var(--font);
+  /* font-size: 1.5rem; */
+  /* font-weight: 500; */
+  /* color: var(--white); */
+  background-color: var(--dark-blue);
+  /* cursor: pointer; */
+  /* padding: 15px 32px; */
+  /* text-decoration: none; */
+}
+
+/* button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px 32px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: var(--shadow);
+    background-color: #ccc;
+    cursor: pointer;
+  } */

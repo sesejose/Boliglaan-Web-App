@@ -1,0 +1,54 @@
+@media only screen and (min-width: 768px) {
+  /* Nav  */
+
+  .open {
+    display: none;
+  }
+  .phone {
+    border-radius: var(--border-radius-20);
+  }
+  .phone > div {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  #menu-desk {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 0.5rem; */
+    /* flex-wrap: wrap; */
+  }
+  #menu-desk ul {
+    flex-flow: row;
+  }
+
+  nav {
+    position: fixed;
+  }
+  nav ul li {
+    width: fit-content;
+    border: none;
+  }
+
+  /* Basket  */
+
+  #basket {
+    /* position: relative; */
+    /* right: 0; */
+    width: 100%;
+  }
+  .basket-container {
+    position: absolute;
+    background-color: var(--background);
+    right: 0;
+    margin: var(--m);
+    /* top: 0; */
+    width: fit-content;
+    height: 100vh;
+    padding: var(--p-medium);
+    border-radius: var(--border-radius-20);
+    /* float: right; */
+    /* z-index: 1; */
+  }
+}
