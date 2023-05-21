@@ -4,8 +4,8 @@ export default function HeroForside() {
   return (
     <>
       <div className="hero-forside-container">
-        <div className="hero-forside-image"></div>
-        <div className="hero-forside-text">
+        <div className="hero-forside-image col-6-13"></div>
+        <div className="hero-forside-text col-1-5">
           <h1>Få tilbud fra flere banker på én gang</h1>
           <h4>Ansøg om et boliglån uden stress: Vi gør det simpelt og støttende</h4>
           <Link href={"../loan/steps/01-din-nye-bolig/01-din-nye-bolig"} className="btn flex-row">

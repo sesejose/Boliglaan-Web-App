@@ -512,7 +512,7 @@ nav ul li a.close {
   width: 100%;
 }
 
-/* Cards */
+/* Cards Basket */
 
 .card-container {
   display: flex;
@@ -546,13 +546,13 @@ nav ul li a.close {
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
-  /* position: relative; */
   text-align: center;
   height: 100vh;
+  background-color: var(--dark-blue);
+  overflow: hidden;
 }
 
 .hero-forside-image {
-  /* position: absolute; */
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -562,9 +562,9 @@ nav ul li a.close {
   background-position: center;
 }
 .hero-forside-text {
+  color: var(--white);
   gap: 1rem;
   align-items: center;
-  /* position: absolute; */
   padding: var(--p);
   text-align: left;
 }
@@ -595,14 +595,30 @@ nav ul li a.close {
   justify-content: space-around;
   height: 100%;
 }
+
 .container-page {
-  min-width: 75vw;
+  /*Wrapper is actually the main container*/
+  /* grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  grid-row-end: 3; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-content: initial;
   width: 100%;
-  margin-top: 6.5rem;
-  height: 100%;
+  margin: var(--m-auto);
+  /* z-index: 2; */
+  /* margin-top: 40px; */
+  /* margin-bottom: 80px; */
+  /* min-width: 75vw; */
+  /* width: 100%; */
+  /* margin-top: 6.5rem; */
+  /* height: 100%; */
   /* overflow: scroll; */
   position: relative;
-  z-index: 4;
+  /* z-index: 4; */
 }
 
 /* Flex */
@@ -684,49 +700,6 @@ nav ul li a.close {
   align-items: flex-end;
   gap: 0.5rem;
   flex-wrap: wrap;
-}
-
-/* Steps */
-#steps {
-  display: none;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: first baseline;
-  gap: 1rem;
-  background-color: var(--background);
-  /* border-radius: var(--border-radius-10); */
-  /* box-shadow: var(--shadow); */
-  /* margin: var(--mb); */
-  padding: var(--p-medium);
-}
-
-button.step svg {
-  fill: var(--green) !important;
-}
-
-button.step {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--p);
-  background-color: var(--white);
-  box-shadow: var(--shadow);
-  color: var(--dark-blue);
-  font-weight: 600;
-  border-radius: var(--border-radius-10);
-}
-
-button.step:disabled {
-  background-color: var(--white);
-  border: 1px solid var(--border);
-  color: var(--border);
-  opacity: 1;
-  box-shadow: none;
-}
-button.step:disabled svg {
-  fill: var(--border) !important;
 }
 
 /* All the Modals */

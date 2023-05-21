@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Nav from "./Nav";
 import Footer from "./Footer";
 
 // All the pages' contents would render in {children}
@@ -6,8 +6,8 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
-      <main className="wrapper">{children}</main>
+      <Nav />
+      <main className="container-page">{children}</main>
       <Footer />
     </>
   );

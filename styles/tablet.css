@@ -23,8 +23,14 @@
     flex-flow: row;
   }
 
+  main {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
   nav {
-    position: fixed;
+    position: relative;
   }
   nav ul li {
     width: fit-content;
@@ -50,5 +56,209 @@
     border-radius: var(--border-radius-20);
     /* float: right; */
     /* z-index: 1; */
+  }
+
+  /* Columns in the grid  */
+
+  .col-1-3 {
+    /* display: inline-grid; */
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+  }
+
+  .col-1-4 {
+    /* display: inline-grid; */
+    grid-column: 1 / 4;
+    grid-row: 1 / -1;
+  }
+
+  .col-1-5 {
+    /* display: inline-grid; */
+    grid-column: 1 / 5;
+    grid-row: 1 / -1;
+  }
+
+  .col-1-6 {
+    /* display: inline-grid; */
+    grid-column: 1 / 6;
+    grid-row: 1 / -1;
+  }
+
+  .col-1-7 {
+    /* display: inline-grid; */
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+  }
+
+  .col-3-6 {
+    /* display: inline-grid; */
+    grid-column: 3 / 6;
+    grid-row: 1 / -1;
+  }
+
+  .col-3-11 {
+    /*it is wrong, I have just changed for the Tablet version, the right one is below in Desktop @media*/
+    /* display: inline-grid; */
+    grid-column: 1 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-4-6 {
+    /* display: inline-grid; */
+    grid-column: 4 / 6;
+    grid-row: 1 / -1;
+  }
+
+  .col-4-7 {
+    /* display: inline-grid; */
+    grid-column: 4 / 7;
+    grid-row: 1 / -1;
+  }
+
+  .col-4-10 {
+    /*it is wrong, I have just changed for the Tablet version, the right one is below in Desktop @media*/
+    /* display: inline-grid; */
+    grid-column: 1 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-8-11 {
+    /* display: inline-grid; */
+    grid-column: 8 / 11;
+    grid-row: 1 / -1;
+  }
+
+  .col-5-8 {
+    /* display: inline-grid; */
+    grid-column: 5 / 8;
+    grid-row: 1 / -1;
+  }
+
+  .col-5-9 {
+    /* display: inline-grid; */
+    grid-column: 5 / 9;
+    grid-row: 1 / -1;
+  }
+
+  .col-5-13 {
+    /* display: inline-grid; */
+    grid-column: 5 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-5-11 {
+    /* display: inline-grid; */
+    grid-column: 5 / 11;
+    grid-row: 1 / -1;
+  }
+
+  .col-9-13 {
+    /* display: inline-grid; */
+    grid-column: 9 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-7-10 {
+    /* display: inline-grid; */
+    grid-column: 7 / 10;
+    grid-row: 1 / -1;
+  }
+
+  .col-6-13 {
+    /* display: inline-grid; */
+    grid-column: 6 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-7-13 {
+    /* display: inline-grid; */
+    grid-column: 7 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-8-13 {
+    /* display: inline-grid; */
+    grid-column: 8 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-10-13 {
+    /* display: inline-grid; */
+    grid-column: 10 / 13;
+    grid-row: 1 / -1;
+  }
+
+  .col-12 {
+    /* display: inline-grid; */
+    grid-column: 1 / 13;
+    grid-row: 1 / -1;
+  }
+
+  /* Main Container Page  */
+
+  .container-page {
+    /*Wrapper is actually the main container*/
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    row-gap: 0;
+    column-gap: 0;
+    justify-content: center;
+    align-content: initial;
+    width: 100%;
+    height: 100%;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
+    /* margin-top: 40px; */
+    /* margin-bottom: 80px; */
+  }
+
+  /* Forside  */
+
+  .hero-forside-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    /* gap: 3rem; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 550px;
+  }
+  .hero-forside-image {
+    aspect-ratio: 1/1;
+    width: 100%;
+    /* height: auto; */
+  }
+
+  .hero-forside-text {
+    padding: var(--p-medium);
+    /* height: auto; */
+  }
+
+  /* Forms  */
+
+  #steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: first baseline;
+    gap: 1rem;
+    background-color: var(--background);
+    /* border-radius: var(--border-radius-10); */
+    /* box-shadow: var(--shadow); */
+    /* margin: var(--mb); */
+    padding: var(--p-medium);
+    grid-column: 2 / 5;
+  }
+
+  .step-back-container,
+  #nyeBoligForm {
+    grid-column: 6 / 12;
+  }
+
+  .step-back-container > div > .btn-second {
+    display: none !important;
   }
 }

@@ -30,7 +30,6 @@ function MyApp({ Component, pageProps }) {
       <Context.Provider value={{ nyeBolig, setNyeBolig }}>
         <Layout>
           <Component {...pageProps} />
-          <Basket></Basket>
         </Layout>
       </Context.Provider>
     </>

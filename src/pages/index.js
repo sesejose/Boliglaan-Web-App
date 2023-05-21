@@ -4,6 +4,7 @@ import Test from "../../components/Test";
 import Context from "../../components/Context";
 import { useContext, useState } from "react";
 import HeroForside from "../../components/HeroForside";
+import StepsMobile from "../../components/StepsMobile";
 
 // After ** Head ** I can include all the components for the homepage
 export default function Forside() {
@@ -17,6 +18,7 @@ export default function Forside() {
         {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
       </Head>
       <HeroForside></HeroForside>
+      <StepsMobile className="col-1-6"></StepsMobile>
     </>
   );
 }
