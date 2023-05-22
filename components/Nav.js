@@ -51,7 +51,7 @@ export default function Nav() {
               </div>
             </Link>
 
-            <Link href={""} className="tab-basket basket-icon" onClick={openBasket}>
+            <Link href={""} className="basket-icon" onClick={openBasket}>
               {/* <div className="basket-icon pink"> */}
               <div className="flex-column">
                 <div className="how-many">

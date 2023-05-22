@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function LidtOmDig() {
   return (
     <>
-      <div className="container-page">
+      <div className="grid">
         <div className="forms-container">
           {/* Back and Steps Bar */}
           <div className="flex-row-space-around step-back-container">

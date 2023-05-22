@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Nav />
-      <main className="container-page">{children}</main>
+      <main className="grid">{children}</main>
       <Footer />
     </>
   );
