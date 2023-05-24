@@ -4,10 +4,10 @@ import ikonfortael from "public/ikonfortael.svg";
 import ikonvaelg from "public/ikonvaelg.svg";
 import ikonskift from "public/ikonskift.svg";
 
-export default function Fordele() {
+export default function Advantages() {
   return (
     <>
-      <div id="fordele" className="grid">
+      <div id="advantages" className="grid">
         {/* Ikon Fortæl  */}
 
         <div className="fortael">

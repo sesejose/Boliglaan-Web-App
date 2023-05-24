@@ -16,6 +16,13 @@
     gap: 1rem;
   }
 
+  .phone > div > svg,
+  .basket-icon > div > svg,
+  .person > div > svg {
+    width: 1.333rem;
+    height: auto;
+  }
+
   .icons-nav-container {
     gap: 1rem;
   }
@@ -57,16 +64,20 @@
     height: auto;
   }
 
+  .phone {
+    padding: var(--ps);
+  }
+
   #menu-desk {
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
-    /* gap: 0.5rem; */
     /* flex-wrap: wrap; */
   }
   #menu-desk ul {
     flex-flow: row;
+    gap: 5rem;
   }
 
   main {
@@ -82,6 +93,12 @@
   nav ul li {
     width: fit-content;
     border: none;
+  }
+
+  /* Buttons */
+
+  .btn {
+    width: fit-content;
   }
 
   /* Basket  */
@@ -146,7 +163,7 @@
   .col-3-11 {
     /*it is wrong, I have just changed for the Tablet version, the right one is below in Desktop @media*/
     /* display: inline-grid; */
-    grid-column: 1 / 13;
+    grid-column: 3 / 11;
     grid-row: 1 / -1;
   }
 
@@ -243,15 +260,15 @@
 
   /* Main Container Page  */
 
-  .grid {
+  .grid,
+  .grid-center {
     /*Wrapper is actually the main container*/
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
     row-gap: 0;
     column-gap: 2.667rem;
-    justify-content: start;
-    align-items: start;
+
     width: 100%;
     height: 100%;
     /* max-width: 1280px; */
@@ -260,9 +277,19 @@
     /* margin-bottom: 80px; */
   }
 
-  /* Forside  */
+  .grid {
+    justify-items: start;
+    align-items: start;
+  }
 
-  .hero-forside-container {
+  .grid-center {
+    justify-items: start;
+    align-items: center;
+  }
+
+  /* Home  */
+
+  .hero-home-container {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -276,15 +303,17 @@
     height: 550px;
     overflow: hidden;
   }
-  .hero-forside-image {
+  .hero-home-image {
     aspect-ratio: 1/1;
     width: 100%;
+    background-position-y: -20%;
     /* height: auto; */
   }
 
-  .hero-forside-text {
+  .hero-home-text {
     height: 100vh;
     padding: var(--p-medium);
+    align-items: start;
     /* height: auto; */
   }
 
@@ -304,13 +333,24 @@
     padding: var(--p-medium);
   }
 
-  .step-back-container,
-  #nyeBoligForm {
-    grid-column: 6 / 12;
-  }
-
   .step-back-container > div > .btn-second {
     display: none !important;
+  }
+
+  .step-back-wrapper {
+    width: 100%;
+    grid-column: 6 / 11;
+    padding: var(--pt-medium);
+  }
+
+  .step-back-container {
+    padding: var(--p);
+  }
+
+  .form-wrapper {
+    width: 100%;
+    grid-column: 6 / 11;
+    padding: var(--ptb-medium);
   }
 
   /* Footer  */
@@ -365,12 +405,27 @@
   }
 
   /* Components  */
-  #saadan-intro {
-    grid-column: 1 / -1;
+
+  /**/
+
+  #three-steps {
     padding: var(--p-medium);
-    background-color: var(--dark-blue);
-    color: var(--white);
-    /* flex-direction: row; */
+  }
+
+  .step-et {
+    grid-column: 1 / 5;
+  }
+  .step-to {
+    grid-column: 5 / 9;
+  }
+  .step-tre {
+    grid-column: 9 / 13;
+  }
+
+  /**/
+
+  #advantages {
+    padding: var(--ptb-large);
   }
 
   .fortael {
@@ -387,5 +442,148 @@
   .vaelg,
   .skift {
     padding: var(--p-medium);
+  }
+
+  /**/
+
+  .courses-home-text {
+    min-height: 600px;
+    padding: var(--p-medium);
+    display: flex;
+    justify-content: center;
+  }
+
+  .courses-home-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-image: url("../public/kurserhome.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Newsletter  */
+
+  #newsletter {
+    padding: var(--p-medium);
+  }
+
+  /* Quotes */
+
+  #quotes {
+    grid-column: 1 / -1;
+  }
+
+  .awssld__container {
+    padding-bottom: var(--slider-height-percentage-desktop) !important;
+  }
+
+  .quote-container {
+    max-width: 50%;
+    width: 50%;
+    gap: 5rem;
+  }
+
+  .quotation-marks {
+    font-size: 12rem;
+  }
+
+  /* Card */
+
+  .info-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .card-description,
+  .card-price {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    /* gap: 0.5rem; */
+  }
+
+  .card-price {
+    width: 100%;
+  }
+
+  .card-price .btn {
+    width: 100%;
+  }
+
+  /* Card Courses  */
+
+  .info-video-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .video-description {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .video-price {
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .video-price h4,
+  .video-price > div {
+    width: 100%;
+  }
+
+  .video-price .btn {
+    width: fit-content;
+  }
+
+  #courses {
+    grid-column: 1 / -1;
+    background-color: var(--ligh-blue);
+    justify-items: start;
+    align-items: start;
+    text-align: center;
+    padding: var(--mt-medium);
+    color: var(--white);
+    height: 100%;
+  }
+
+  #video {
+    grid-column: 1 / -1;
+    padding: var(--p-mobile-medium);
+    background-color: var(--ligh-blue);
+    color: var(--white);
+  }
+
+  #other-courses {
+    display: none;
+  }
+
+  #other-courses-desktop {
+    grid-column: 1 / -1;
+    display: grid;
+    /* padding: var(--p-mobile-medium); */
+    background-color: var(--white);
+    color: var(--dark-blue);
+  }
+
+  #other-courses .awssld__container,
+  #other-courses-desktop .awssld__container {
+    padding-bottom: var(--slider-height-percentage-tablet) !important;
   }
 }

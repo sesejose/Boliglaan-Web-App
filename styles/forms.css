@@ -43,12 +43,15 @@ button.step:disabled svg {
   fill: var(--border) !important;
 }
 
+.step-back-wrapper {
+  width: 100%;
+  padding: var(--p-mobile-medium);
+}
 .step-back-container {
   background-color: var(--white);
   border-radius: var(--border-radius-20);
-  padding: var(--p);
-  margin: var(--mb);
-  margin: var(--mtb-medium);
+  padding: var(--plr);
+  /* margin: var(--mtb-medium); */
 }
 
 /* Fomrs */
@@ -57,15 +60,20 @@ button.step:disabled svg {
   width: 100%;
 }
 
-form {
+.form-wrapper {
   width: 100%;
+  padding: var(--p-mobile-medium);
+}
+
+form {
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
   background-color: var(--white);
   border-radius: var(--border-radius-20);
-  padding: var(--ptb-medium);
+  padding: var(--p);
 }
 
 form .field label {
@@ -317,3 +325,22 @@ input[type="text"]:not(:focus):not(:placeholder-shown):invalid ~ .error-message 
     background-color: #ccc;
     cursor: pointer;
   } */
+
+/* Newsletter */
+
+.input-group .tilmeld {
+  position: absolute;
+  background-color: var(--border);
+  width: fit-content;
+  height: 3rem;
+  border-radius: var(--border-radius-right-10);
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: 600;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--plr);
+}
