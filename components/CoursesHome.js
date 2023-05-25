@@ -5,7 +5,7 @@ export default function CoursesHome() {
     <>
       <div className="grid-center" id="courses-home-container">
         <div className="courses-home-image col-1-6"></div>
-        <div className="courses-home-text col-6-13 p-mobile-medium">
+        <div className="courses-home-text col-6-13">
           <h2>Lær mere om boliglån og ejendomshandel</h2>
           <p>
             Vil du vide mere om boliglån, ejendomshandel eller processen for at ansøge om et boliglån? Har du brug for rådgivning om dokumentation, gebyrer, rentesatser eller vilkår? Hos boliglån.dk tilbyder vi kurser, der dækker alle disse emner og

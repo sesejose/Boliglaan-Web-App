@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
   const context = useContext(Context);
   // Here we define the States --> ([]) if this is an array
   // const [example, setExample] = useState([]);
+
   // 01. Din nye bolig
   const [nyeBolig, setNyeBolig] = useState({
     type: "",
@@ -24,10 +25,28 @@ function MyApp({ Component, pageProps }) {
     income: "",
     debt: "",
   });
+  // Nuværende bolig
+  const [nuværendeBolig, setNuværendeBolig] = useState({
+    type: "",
+    adresse: "",
+    postnr: "",
+    by: "",
+    land: "",
+    boligVærd: "",
+  });
+  // Andre nuværende bolig
+  const [andetNuværendeBolig, setAndetNuværendeBolig] = useState({
+    type: "",
+    adresse: "",
+    postnr: "",
+    by: "",
+    land: "",
+    boligVærd: "",
+  });
 
   return (
     <>
-      <Context.Provider value={{ nyeBolig, setNyeBolig }}>
+      <Context.Provider value={{ nyeBolig, setNyeBolig, andetNuværendeBolig, setAndetNuværendeBolig }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

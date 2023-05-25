@@ -8,15 +8,18 @@
   .open {
     display: none;
   }
-  .phone {
+  .phone,
+  .contact {
     border-radius: var(--border-radius-20);
   }
-  .phone > div {
+  .phone > div,
+  .contact > div {
     flex-direction: row;
     gap: 1rem;
   }
 
   .phone > div > svg,
+  .contact > div > svg,
   .basket-icon > div > svg,
   .person > div > svg {
     width: 1.333rem;
@@ -27,7 +30,8 @@
     gap: 1rem;
   }
 
-  .phone > div > p {
+  .phone > div > p,
+  .contact > div > p {
     font-size: 1rem;
     font-weight: 600;
   }
@@ -59,14 +63,15 @@
   .basket-icon svg,
   .close-modal svg,
   .person svg,
-  .phone svg {
+  .phone svg,
+  .contact svg {
     width: 24px;
     height: auto;
   }
 
-  .phone {
+  /* .phone {
     padding: var(--ps);
-  }
+  } */
 
   #menu-desk {
     display: flex;
@@ -333,7 +338,7 @@
     padding: var(--p-medium);
   }
 
-  .step-back-container > div > .btn-second {
+  .step-back-container > div > .btn-card-second {
     display: none !important;
   }
 
@@ -404,27 +409,31 @@
     margin: var(--mt-large);
   }
 
+  footer ul li {
+    justify-content: flex-start;
+  }
+
   /* Components  */
 
   /**/
 
-  #three-steps {
+  #advantages {
     padding: var(--p-medium);
   }
 
-  .step-et {
+  .advantage-et {
     grid-column: 1 / 5;
   }
-  .step-to {
+  .advantage-to {
     grid-column: 5 / 9;
   }
-  .step-tre {
+  .advantage-tre {
     grid-column: 9 / 13;
   }
 
   /**/
 
-  #advantages {
+  #three-steps {
     padding: var(--ptb-large);
   }
 
@@ -444,23 +453,19 @@
     padding: var(--p-medium);
   }
 
-  /**/
+  /* Courses Home */
 
-  .courses-home-text {
-    min-height: 600px;
-    padding: var(--p-medium);
+  .courses-home-text,
+  .about-jesper-text {
+    padding: var(--ptb-medium);
     display: flex;
     justify-content: center;
   }
-
-  .courses-home-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    background-image: url("../public/kurserhome.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  .courses-home-text {
+    min-height: 600px;
+  }
+  .about-jesper-text {
+    min-height: auto;
   }
 
   /* Newsletter  */
@@ -489,6 +494,37 @@
     font-size: 12rem;
   }
 
+  /* About */
+
+  #about-us,
+  #contact-us,
+  #faq-questions {
+    text-align: center;
+  }
+
+  .mission {
+    grid-column: 1 / 5;
+  }
+  .vision {
+    grid-column: 5 / 9;
+  }
+  .verdier {
+    grid-column: 9 / 13;
+  }
+
+  .partners-container {
+    width: 100%;
+  }
+
+  .partners {
+    flex-direction: row;
+    height: 200px;
+  }
+
+  .partner {
+    padding: var(--p);
+  }
+
   /* Card */
 
   .info-card-container {
@@ -515,7 +551,15 @@
     width: 100%;
   }
 
-  .card-price .btn {
+  .btns-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .card-price .btn-card,
+  .card-price .btn-card-second {
     width: 100%;
   }
 
@@ -585,5 +629,42 @@
   #other-courses .awssld__container,
   #other-courses-desktop .awssld__container {
     padding-bottom: var(--slider-height-percentage-tablet) !important;
+  }
+
+  .info-video-open-container {
+    padding: var(--p-medium);
+  }
+
+  .video-open-description-title {
+    grid-column: 1 / 5;
+    width: 100%;
+  }
+
+  .video-open-description-text {
+    grid-column: 5 / 13;
+    width: 100%;
+  }
+
+  #stepsCheckout {
+    grid-column: 2 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: first baseline;
+    gap: 1rem;
+    background-color: var(--background);
+    padding: var(--p-medium);
+  }
+
+  /* Chat Support  */
+
+  #chat {
+    /* height: 80vh; */
+    padding: var(--p-medium);
+    margin: var(--mtb-medium);
+  }
+
+  .chat-container {
+    width: 40%;
   }
 }

@@ -35,7 +35,7 @@ export default function Nav() {
                 </Link>
               </li>
               <li>
-                <Link href={"/omos"} onClick={closeMenu}>
+                <Link href={"/about"} onClick={closeMenu}>
                   <p>Om os</p>
                 </Link>
               </li>
@@ -102,7 +102,7 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link className="" href={"/omos"} onClick={closeMenu}>
+              <Link className="" href={"/about"} onClick={closeMenu}>
                 <p>Om os</p>
               </Link>
             </li>

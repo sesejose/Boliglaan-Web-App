@@ -25,7 +25,7 @@ export default function DinNyeBolig(props) {
             </Link>
           </div>
           <div className="flex-row-right">
-            <button className="btn-second" onClick={openSteps}>
+            <button className="btn-card-second" onClick={openSteps}>
               1/8
             </button>
           </div>
@@ -56,7 +56,7 @@ export default function DinNyeBolig(props) {
 
             {/* Adresse  */}
             <div className="flex-column-left field">
-              <label htmlFor="adresse_ny_bolig">Adresse</label>
+              <label htmlFor="adresse_nye_bolig">Adresse</label>
               <input type="text" name="adresse_nye_bolig" id="adresse_nye_bolig" placeholder="Adresse" minLength="2" required />
               <span className="error-message">Enter a valid value</span>
             </div>

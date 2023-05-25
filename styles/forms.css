@@ -14,11 +14,11 @@
   grid-column: 1 / -1;
 }
 
-button.step svg {
+a.step svg {
   fill: var(--green) !important;
 }
 
-button.step {
+a.step {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -32,20 +32,27 @@ button.step {
   border-radius: var(--border-radius-10);
 }
 
-button.step:disabled {
-  background-color: var(--white);
+a.step-disabled {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--p);
   border: 1px solid var(--border);
+  background-color: var(--background);
+  border-radius: var(--border-radius-10);
   color: var(--border);
-  opacity: 1;
-  box-shadow: none;
+  font-weight: 600;
 }
-button.step:disabled svg {
+a.step-disabled svg {
   fill: var(--border) !important;
 }
 
 .step-back-wrapper {
   width: 100%;
-  padding: var(--p-mobile-medium);
+  padding: var(--pt-mobile-medium);
+  margin: 0;
 }
 .step-back-container {
   background-color: var(--white);
@@ -79,7 +86,14 @@ form {
 form .field label {
   font-weight: 400;
   font-size: 1rem;
+  align-items: center;
+  gap: 1rem;
 }
+
+form .field label svg {
+  color: var(--green);
+}
+
 form .field input {
   font-weight: 600;
   border: 1px solid var(--border);
@@ -125,6 +139,7 @@ textarea {
   border: 1px solid var(--border);
   border-radius: var(--border-radius-10);
   padding: var(--p);
+  color: var(--dark-blue);
 }
 
 .field textarea {
@@ -330,7 +345,6 @@ input[type="text"]:not(:focus):not(:placeholder-shown):invalid ~ .error-message 
 
 .input-group .tilmeld {
   position: absolute;
-  background-color: var(--border);
   width: fit-content;
   height: 3rem;
   border-radius: var(--border-radius-right-10);
@@ -343,4 +357,66 @@ input[type="text"]:not(:focus):not(:placeholder-shown):invalid ~ .error-message 
   justify-content: center;
   align-items: center;
   padding: var(--plr);
+}
+
+.input-group .message {
+  position: absolute;
+  width: fit-content;
+  height: 3rem;
+  border-radius: var(--border-radius-right-10);
+  /* border: 1px solid var(--green); */
+  background-color: transparent;
+  color: var(--green);
+  font-weight: 600;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--plr);
+}
+
+.message input[type="text"] {
+  color: var(--dark-blue);
+}
+
+/* Checkout  */
+
+#stepsCheckout {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: first baseline;
+  gap: 1rem;
+  background-color: var(--background);
+  padding: var(--p-medium);
+}
+
+/* Fieldset x 2  */
+
+.fieldset-2-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  /* flex-grow: 4; */
+  /* float: left; */
+}
+
+.fieldset-2-container label {
+  display: none;
+}
+
+/* .field svg {
+  padding: var(--pl);
+  width: 100%;
+} */
+
+/* Din boligsituation  */
+
+#nuværende-bolig,
+#andet-nuværende-bolig {
+  display: none;
 }

@@ -24,10 +24,10 @@ export default function Home() {
         {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
       </Head>
       <HeroHome></HeroHome>
-      <ThreeSteps className="col-12"></ThreeSteps>
+      <Advantages className="col-12"></Advantages>
       <SaadanIntro className="col-12"></SaadanIntro>
       {/* <StepsMobile className="col-1-6"></StepsMobile> */}
-      <Advantages className="col-12"></Advantages>
+      <ThreeSteps className="col-12"></ThreeSteps>
       <CoursesHome className="col-12"></CoursesHome>
       <Quotes className="col-12"></Quotes>
       <Newsletter className="col-12"></Newsletter>

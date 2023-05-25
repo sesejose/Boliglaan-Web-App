@@ -32,12 +32,30 @@ export default function Card() {
           <div className="card-price">
             <h4 className="bold">100 DKK</h4>
             <div className="">inkl.moms</div>
-            <Link className="btn" href={""}>
-              Tilføj i kurv
-            </Link>
+            <div className="btns-container">
+              <Link className="btn-card-second" href={""} onClick={openBasket}>
+                Læs mere
+              </Link>
+              <Link className="btn-card" href={""} onClick={openBasket}>
+                Tilføj i kurv
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
+}
+
+function openBasket() {
+  const basket = document.querySelector("#basket");
+  const menu = document.querySelector("#menu");
+  if (basket.style.display === "flex") {
+    basket.style.display = "none";
+  } else {
+    basket.style.display = "flex";
+  }
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  }
 }

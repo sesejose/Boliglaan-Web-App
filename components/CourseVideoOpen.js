@@ -1,29 +1,27 @@
 import Link from "next/link";
 
-export default function Video() {
+export default function CourseVideoOpen() {
   return (
     <>
-      <div id="video" className="grid-center">
-        <div className="col-3-11">
-          <div className="flex-row-center">
-            <h2>Kurser i boliglån og ejendomshandel</h2>
-            <h4 className="">
-              Har du brug for rådgivning eller vejledning i forbindelse med boliglån og ejendomshandel? Vi tilbyder kurser og undervisning, der dækker alt fra ansøgningsprocessen til rentesatser og gebyrer. Vælg mellem følgende kurser:
-            </h4>
-          </div>
-
-          <div className="card-courses-container-video">
-            <div className="card-courses-image"></div>
-            <div className="info-video-container padding">
-              <div className="video-description">
+      <div id="course-video-open" className="grid-center">
+        <div className="col-12">
+          <div className="video-open-container">
+            <div className="video-open-image"></div>
+            <div className="info-video-open-container grid">
+              <div className="video-open-description-title">
                 <div className="green">Kategori</div>
                 <h4>Boligkøb for begyndere</h4>
-                <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien.</p>
-                <Link className="btn-card-second" href={"/courses/course"}>
+                {/* <Link className="btn-second" href={"/courses/course"}>
                   Læs mere
-                </Link>
+                </Link> */}
               </div>
-              <div className="video-price">
+              <div className="video-open-description-text">
+                <p className="bold">1T 25M</p>
+                <p>
+                  Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas
+                  eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus
+                  ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                </p>
                 <h4 className="bold">100 DKK</h4>
                 <div className="">inkl.moms</div>
                 <Link className="btn-card" href={""} onClick={openBasket}>
