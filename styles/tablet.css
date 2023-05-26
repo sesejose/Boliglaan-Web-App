@@ -159,6 +159,12 @@
     grid-row: 1 / -1;
   }
 
+  .col-2-12 {
+    /* display: inline-grid; */
+    grid-column: 2 / 12;
+    grid-row: 1 / -1;
+  }
+
   .col-3-6 {
     /* display: inline-grid; */
     grid-column: 3 / 6;
@@ -667,5 +673,21 @@
 
   .chat-container {
     width: 100%;
+  }
+
+  /* All the Modals */
+
+  #modal-intro {
+    position: fixed;
+  }
+  .flex-row-modal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: var(--mtb);
+    /* overflow: scroll; */
   }
 }
