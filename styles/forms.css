@@ -94,13 +94,15 @@ form .field label svg {
   color: var(--green);
 }
 
-form .field input {
+form .field input,
+select {
   font-weight: 600;
   border: 1px solid var(--border);
   background-color: var(--background);
 }
 .field input[type="text"]:focus,
 .field input[type="number"]:focus,
+.field input[type="date"]:focus,
 textarea:focus {
   border: 1px solid var(--green);
   outline: none;
@@ -122,7 +124,8 @@ textarea:focus {
 
 .field label,
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   display: flex;
 }
@@ -144,6 +147,16 @@ textarea {
 
 .field textarea {
   height: 8rem;
+}
+
+.field select,
+option {
+  appearance: none;
+  height: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-10);
+  padding: var(--plr);
+  color: var(--dark-blue);
 }
 
 fieldset {
@@ -168,7 +181,7 @@ fieldset {
   width: 48px;
   height: 100%;
   border-radius: var(--border-radius-right-10);
-  border: 1px solid var(--border);
+  border: 1px solid var(--green);
   right: 0;
   display: flex;
   justify-content: center;
@@ -203,6 +216,12 @@ fieldset {
 
 /* Hiden radio circles */
 .radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar input[type="checkbox"] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -416,7 +435,15 @@ input[type="text"]:not(:focus):not(:placeholder-shown):invalid ~ .error-message 
 
 /* Din boligsituation  */
 
-#nuværende-bolig,
-#andet-nuværende-bolig {
+#nuvaerende-bolig,
+#anden-nuvaerende-bolig,
+#boliglaan-form-group,
+#realkreditlaan-form-group,
+#btn-next-boligsituation-one-two,
+#btn-next-ejendele-one {
   display: none;
+}
+
+#anden-nuvaerende-bolig {
+  margin: var(--mt);
 }

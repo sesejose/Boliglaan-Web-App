@@ -20,33 +20,61 @@ function MyApp({ Component, pageProps }) {
     postnr: "",
     by: "",
     land: "",
-    price: "",
-    payment: "",
-    income: "",
-    debt: "",
+    pris: "",
+    betaling: "",
+    indkomst: "",
+    gaeld: "",
   });
   // Nuværende bolig
-  const [nuværendeBolig, setNuværendeBolig] = useState({
+  const [nuvaerendeBolig, setNuvaerendeBolig] = useState({
     type: "",
     adresse: "",
     postnr: "",
     by: "",
     land: "",
-    boligVærd: "",
+    boligvaerd: "",
+    boliglaan: "",
+    boliglaanrestgaeld: "",
+    boliglaanrente: "",
+    boliglaanafdrag: "",
+    realkreditlaan: "",
+    realkreditlaanbank: "",
+    realkreditlaanoprettet: "",
+    realkreditlaanhovedstol: "",
+    realkreditlaanrestgaeld: "",
+    realkreditlaanrente: "",
+    realkreditlaanrentetype: "",
+    realkreditlaanafdrag: "",
+    nylaan: "",
+    skalsaelges: "",
   });
-  // Andre nuværende bolig
-  const [andetNuværendeBolig, setAndetNuværendeBolig] = useState({
+  // Anden Nuværende bolig
+  const [andenNuvaerendeBolig, setAndenNuvaerendeBolig] = useState({
     type: "",
     adresse: "",
     postnr: "",
     by: "",
     land: "",
     boligVærd: "",
+    banklaan: "",
+    banklaanrestgaeld: "",
+    banklaanrente: "",
+    banklaanafdrag: "",
+    realkreditlaan: "",
+    realkreditlaanbank: "",
+    realkreditlaanoprettet: "",
+    realkreditlaanhovedstol: "",
+    realkreditlaanrestgaeld: "",
+    realkreditlaanrente: "",
+    realkreditlaanrentetype: "",
+    realkreditlaanafdrag: "",
+    nylaan: "",
+    skalsaelges: "",
   });
 
   return (
     <>
-      <Context.Provider value={{ nyeBolig, setNyeBolig, andetNuværendeBolig, setAndetNuværendeBolig }}>
+      <Context.Provider value={{ nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

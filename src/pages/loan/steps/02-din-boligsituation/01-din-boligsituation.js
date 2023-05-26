@@ -6,9 +6,58 @@ import StepsMobile from "../../../../../components/StepsMobile";
 export default function DinBoligsituation() {
   const context = useContext(Context);
 
-  function setEjerEllerAndelAndet(e) {
-    context.setAndetNuværendeBolig((prevNyeBolig) => ({ ...prevNyeBolig, type: e.target.value }));
+  // NuvaerendeBolig type
+  function setNuvaerendeBoligType(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, type: e.target.value }));
     console.log(e.target.value);
+  }
+  //Nuvaerende Bolig Adresse
+  function setNuvaerendeBoligAdresse(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, adresse: e.target.value }));
+  }
+  //Nuvaerende Bolig Postnr
+  function setNuvaerendeBoligPostnr(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, postnr: e.target.value }));
+  }
+  //Nuvaerende Bolig By
+  function setNuvaerendeBoligBy(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, by: e.target.value }));
+  }
+  //Nuvaerende Bolig Land
+  function setNuvaerendeBoligLand(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, land: e.target.value }));
+  }
+  //Nuvaerende Bolig Værd
+  function setNuvaerendeBoligVaerd(e) {
+    context.setNuvaerendeBolig((prevNuvaerendeBolig) => ({ ...prevNuvaerendeBolig, boligvaerd: e.target.value }));
+  }
+
+  ////////////  Anden Bolig  ///////////////
+
+  // NuvaerendeBolig type
+  function setAndenNuvaerendeBoligType(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, type: e.target.value }));
+    console.log(e.target.value);
+  }
+  //Nuvaerende Bolig Adresse
+  function setAndenNuvaerendeBoligAdresse(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, adresse: e.target.value }));
+  }
+  //Nuvaerende Bolig Postnr
+  function setAndenNuvaerendeBoligPostnr(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, postnr: e.target.value }));
+  }
+  //Nuvaerende Bolig By
+  function setAndenNuvaerendeBoligBy(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, by: e.target.value }));
+  }
+  //Nuvaerende Bolig Land
+  function setAndenNuvaerendeBoligLand(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, land: e.target.value }));
+  }
+  //Nuvaerende Bolig Værd
+  function setAndenNuvaerendeBoligVaerd(e) {
+    context.setAndenNuvaerendeBolig((prevAndenNuvaerendeBolig) => ({ ...prevAndenNuvaerendeBolig, boligvaerd: e.target.value }));
   }
 
   return (
@@ -34,60 +83,73 @@ export default function DinBoligsituation() {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="boligsituationForm">
+        <form id="boligSituationOne">
           <h2>Din DinBoligsituation</h2>
           <p>For at bankerne kan komme med et tilbud på din økonomi, er de nødt til at vide noget omkring din boligsituation.</p>
           <fieldset className="flex-column-left">
             <div className="flex-row-left">
               <legend>Har du en nuværende ejerbolig?</legend>
             </div>
-            {/* Har du andet bolig? Ja / Nej  */}
             <div className="radio-toolbar">
-              <input type="radio" id="har_bolig" name="har_bolig" value="Har en bolig" onClick={openNuværendeBolig} />
+              <input type="radio" id="har_bolig" name="har_bolig" value="Har en bolig" required onClick={openNuvaerendeBolig} />
               <label htmlFor="har_bolig">Ja</label>
 
-              <input type="radio" id="har_ikke_bolig" name="har_bolig" value="Har ikke en bolig" onClick={closeNuværendeBolig} />
+              <input type="radio" id="har_ikke_bolig" name="har_bolig" value="Har ikke en bolig" required onClick={closeNuvaerendeBolig} />
               <label htmlFor="har_ikke_bolig">Nej</label>
             </div>
           </fieldset>
 
           {/* Nuværende Bolig */}
-          <div className="flex-column-left" id="nuværende-bolig">
-            <p>Hvad er adressen på din nuværende ejerbolig? (valgfrit)</p>
 
+          {/* Adresse nuværende Bolig  */}
+          <div className="flex-column-left" id="nuvaerende-bolig">
+            <fieldset className="flex-column-left">
+              <div className="flex-row-left">
+                <legend>Hvilke type bolig ejer du?</legend>
+              </div>
+              {/* Ejer eller Andel  */}
+              <div className="radio-toolbar">
+                <input type="radio" id="bolig_ejersbolig" name="bolig_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setNuvaerendeBoligType} />
+                <label htmlFor="bolig_ejersbolig">Ejersbolig</label>
+
+                <input type="radio" id="bolig_andelsbolig" name="bolig_andel_eller_ejerbolig" value="Andelsbolig" />
+                <label htmlFor="bolig_andelsbolig">Andelsbolig</label>
+              </div>
+            </fieldset>
+            <p>Hvad er adressen på din nuvaerende ejerbolig? (valgfrit)</p>
             {/* Nuværende Bolig Adresse  */}
             <div className="flex-column-left field">
-              <label htmlFor="adresse_nuværende_bolig">Adresse</label>
-              <input type="text" name="adresse_nuværende_bolig" id="adresse_nuværende_bolig" placeholder="Adresse" minLength="2" required />
+              <label htmlFor="adresse_nuvaerende_bolig">Adresse</label>
+              <input type="text" name="adresse_nuvaerende_bolig" id="adresse_nuvaerende_bolig" placeholder="Adresse" minLength="2" required onClick={setNuvaerendeBoligAdresse} />
               <span className="error-message">Enter a valid value</span>
             </div>
             <div className="two-inputs-row">
               {/* Nuværende Bolig Postnr.  */}
               <div className="flex-column-left field">
-                <label htmlFor="postnr_nuværende_bolig">Postnr.</label>
-                <input type="text" name="postnr_nuværende_bolig" id="postnr_nuværende_bolig" placeholder="Postnr." minLength="4" required />
+                <label htmlFor="postnr_nuvaerende_bolig">Postnr.</label>
+                <input type="text" name="postnr_nuvaerende_bolig" id="postnr_nuvaerende_bolig" placeholder="Postnr." minLength="4" required onClick={setNuvaerendeBoligPostnr} />
                 <span className="error-message">Enter a valid value</span>
               </div>
               {/*Nuværende Bolig By  */}
               <div className="flex-column-left field">
-                <label htmlFor="by_nuværende_bolig">By</label>
-                <input type="text" name="by_nuværende_bolig" id="by_nuværende_bolig" placeholder="By" minLength="2" required />
+                <label htmlFor="by_nuvaerende_bolig">By</label>
+                <input type="text" name="by_nuvaerende_bolig" id="by_nuvaerende_bolig" placeholder="By" minLength="2" required onClick={setNuvaerendeBoligBy} />
                 <span className="error-message">Enter a valid value</span>
               </div>
             </div>
             {/* Nuværende Bolig Land */}
             <div className="flex-column-left field">
-              <label htmlFor="nuværende_bolig_land">Land</label>
-              <input type="text" name="nuværende_bolig_land" id="nuværende_bolig_land" placeholder="Land" minLength="2" required />
+              <label htmlFor="nuvaerende_bolig_land">Land</label>
+              <input type="text" name="nuvaerende_bolig_land" id="nuvaerende_bolig_land" placeholder="Land" minLength="2" required onClick={setNuvaerendeBoligLand} />
               <span className="error-message">Enter a valid value</span>
             </div>
 
             {/* Nuværende Bolig Værd */}
             <div className="flex-column-left field">
-              <label htmlFor="nuværende_bolig_værd">Hvor meget er boligen værd?</label>
+              <label htmlFor="nuvaerende_bolig_vaerd">Hvor meget er boligen værd?</label>
               <div className="input-group">
                 <div className="kr">kr.</div>
-                <input type="number" name="nuværende_bolig_værd" id="nuværende_bolig_værd" placeholder="" minLength="2" required />
+                <input type="number" name="nuvaerende_bolig_vaerd" id="nuvaerende_bolig_vaerd" placeholder="" minLength="2" required />
                 <span className="error-message">Enter a valid value</span>
               </div>
             </div>
@@ -99,21 +161,21 @@ export default function DinBoligsituation() {
               </div>
 
               <div className="radio-toolbar">
-                <input type="radio" id="har_andet_bolig" name="har_andet_bolig" value="Har en bolig" onClick={openAndetNuværendeBolig} />
-                <label htmlFor="har_andet_bolig">Ja</label>
+                <input type="radio" id="har_anden_bolig" name="har_anden_bolig" value="Har en bolig" required onClick={openAndenNuvaerendeBolig} />
+                <label htmlFor="har_anden_bolig">Ja</label>
 
-                <input type="radio" id="har_ikke_andet_bolig" name="har_andet_bolig" value="Har ikke en andet bolig" onClick={closeAndetNuværendeBolig} />
-                <label htmlFor="har_ikke_andet_bolig">Nej</label>
+                <input type="radio" id="har_ikke_anden_bolig" name="har_anden_bolig" value="Har ikke en anden bolig" required onClick={closeAndenNuvaerendeBolig} />
+                <label htmlFor="har_ikke_anden_bolig">Nej</label>
               </div>
             </fieldset>
           </div>
 
           {/* Andet Nuværende Bolig  */}
-          <div className="flex-column-left" id="andet-nuværende-bolig">
+          <div className="flex-column-left" id="anden-nuvaerende-bolig">
             <fieldset className="flex-column-left">
               <div className="flex-row-space-around">
-                <h3>Dit andet ejerbolig</h3>
-                <button className="btn-slet" onClick={closeAndetNuværendeBolig}>
+                <h3>Din anden ejerbolig</h3>
+                <button className="btn-slet" onClick={closeAndenNuvaerendeBolig}>
                   Slet
                 </button>
               </div>
@@ -122,11 +184,11 @@ export default function DinBoligsituation() {
               </div>
               {/* Ejer eller Andel  */}
               <div className="radio-toolbar">
-                <input type="radio" id="nuværende_ejersbolig" name="nuværende_andel_eller_ejerbolig" value="Ejersbolig" onClick={setEjerEllerAndelAndet} />
-                <label htmlFor="nuværende_ejersbolig">Ejersbolig</label>
+                <input type="radio" id="nuvaerende_ejersbolig" name="nuvaerende_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setAndenNuvaerendeBoligType} />
+                <label htmlFor="nuvaerende_ejersbolig">Ejersbolig</label>
 
-                <input type="radio" id="nuværende_andelsbolig" name="nuværende_andel_eller_ejerbolig" value="Andelsbolig" />
-                <label htmlFor="nuværende_andelsbolig">Andelsbolig</label>
+                <input type="radio" id="nuvaerende_andelsbolig" name="nuvaerende_andel_eller_ejerbolig" value="Andelsbolig" required onClick={setAndenNuvaerendeBoligType} />
+                <label htmlFor="nuvaerende_andelsbolig">Andelsbolig</label>
               </div>
             </fieldset>
 
@@ -136,49 +198,52 @@ export default function DinBoligsituation() {
 
               {/* Nuværende Bolig Adresse  */}
               <div className="flex-column-left field">
-                <label htmlFor="adresse_nuværende_bolig">Adresse</label>
-                <input type="text" name="adresse_nuværende_bolig" id="adresse_nuværende_bolig" placeholder="Adresse" minLength="2" required />
+                <label htmlFor="adresse_nuvaerende_bolig">Adresse</label>
+                <input type="text" name="adresse_nuvaerende_bolig" id="adresse_nuvaerende_bolig" placeholder="Adresse" minLength="2" required />
                 <span className="error-message">Enter a valid value</span>
               </div>
 
               <div className="two-inputs-row">
                 {/* Nuværende Bolig Postnr.  */}
                 <div className="flex-column-left field">
-                  <label htmlFor="postnr_nuværende_bolig">Postnr.</label>
-                  <input type="text" name="postnr_nuværende_bolig" id="postnr_nuværende_bolig" placeholder="Postnr." minLength="4" required />
+                  <label htmlFor="postnr_nuvaerende_bolig">Postnr.</label>
+                  <input type="text" name="postnr_nuvaerende_bolig" id="postnr_nuvaerende_bolig" placeholder="Postnr." minLength="4" required />
                   <span className="error-message">Enter a valid value</span>
                 </div>
 
                 {/* Nuværende Bolig By  */}
                 <div className="flex-column-left field">
-                  <label htmlFor="by_nuværende_bolig">By</label>
-                  <input type="text" name="by_nuværende_bolig" id="by_nuværende_bolig" placeholder="By" minLength="2" required />
+                  <label htmlFor="by_nuvaerende_bolig">By</label>
+                  <input type="text" name="by_nuvaerende_bolig" id="by_nuvaerende_bolig" placeholder="By" minLength="2" required />
                   <span className="error-message">Enter a valid value</span>
                 </div>
               </div>
 
               {/* Nuværende Bolig Land */}
               <div className="flex-column-left field">
-                <label htmlFor="nuværende_bolig_land">Land</label>
-                <input type="text" name="nuværende_bolig_land" id="nuværende_bolig_land" placeholder="Land" minLength="2" required />
+                <label htmlFor="nuvaerende_bolig_land">Land</label>
+                <input type="text" name="nuvaerende_bolig_land" id="nuvaerende_bolig_land" placeholder="Land" minLength="2" required />
                 <span className="error-message">Enter a valid value</span>
               </div>
 
               {/* Andet Bolig  - Værd */}
               <div className="flex-column-left field">
-                <label htmlFor="andet_bolig_værd">Hvor meget er boligen værd?</label>
+                <label htmlFor="anden_bolig_vaerd">Hvor meget er boligen værd?</label>
                 <div className="input-group">
                   <div className="kr">kr.</div>
-                  <input type="number" name="andet_bolig_værd" id="andet_bolig_værd" placeholder="" minLength="2" required />
+                  <input type="number" name="anden_bolig_vaerd" id="anden_bolig_vaerd" placeholder="" minLength="2" required />
                   <span className="error-message">Enter a valid value</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Submit  */}
+          {/* Next  */}
           <div className="flex-row-center">
-            <Link className="btn-form" href="/loan/steps/01-din-nye-bolig/02-din-nye-bolig">
+            <Link id="btn-next-ejendele-one" className="btn-form" href="/loan/steps/03-ejendele/01-ejendele">
+              Fortsæt
+            </Link>
+            <Link id="btn-next-boligsituation-one-two" className="btn-form" href="/loan/steps/02-din-boligsituation/02-din-boligsituation">
               Fortsæt
             </Link>
           </div>
@@ -186,6 +251,28 @@ export default function DinBoligsituation() {
       </div>
     </>
   );
+}
+
+function showNextEjendele() {
+  const btn = document.getElementById("btn-next-ejendele-one");
+  if (btn.style.display === "none") {
+    btn.style.display = "flex";
+    btn.style.justifyContent = "center";
+  } else {
+    btn.style.display = "flex";
+    btn.style.justifyContent = "center";
+  }
+}
+
+function showNextBoligSituation() {
+  const btn = document.getElementById("btn-next-boligsituation-one-two");
+  if (btn.style.display === "none") {
+    btn.style.display = "flex";
+    btn.style.justifyContent = "center";
+  } else {
+    btn.style.display = "flex";
+    btn.style.justifyContent = "center";
+  }
 }
 
 function openSteps() {
@@ -197,38 +284,40 @@ function openSteps() {
   }
 }
 
-function openNuværendeBolig() {
-  const nuværendeBolig = document.querySelector("#nuværende-bolig");
-  if (nuværendeBolig.style.display === "none") {
-    nuværendeBolig.style.display = "flex";
+function openNuvaerendeBolig() {
+  const nuvaerendeBolig = document.querySelector("#nuvaerende-bolig");
+  if (nuvaerendeBolig.style.display === "none") {
+    nuvaerendeBolig.style.display = "flex";
   } else {
-    nuværendeBolig.style.display = "flex";
+    nuvaerendeBolig.style.display = "flex";
+  }
+  showNextBoligSituation();
+}
+
+function closeNuvaerendeBolig() {
+  const nuvaerendeBolig = document.querySelector("#nuvaerende-bolig");
+  if (nuvaerendeBolig.style.display === "flex") {
+    nuvaerendeBolig.style.display = "none";
+  } else {
+    nuvaerendeBolig.style.display = "none";
+  }
+  showNextEjendele();
+}
+
+function openAndenNuvaerendeBolig() {
+  const andenNuvaerendeBolig = document.querySelector("#anden-nuvaerende-bolig");
+  if (andenNuvaerendeBolig.style.display === "none") {
+    andenNuvaerendeBolig.style.display = "flex";
+  } else {
+    andenNuvaerendeBolig.style.display = "flex";
   }
 }
 
-function closeNuværendeBolig() {
-  const nuværendeBolig = document.querySelector("#nuværende-bolig");
-  if (nuværendeBolig.style.display === "flex") {
-    nuværendeBolig.style.display = "none";
+function closeAndenNuvaerendeBolig() {
+  const andenNuvaerendeBolig = document.querySelector("#anden-nuvaerende-bolig");
+  if (andenNuvaerendeBolig.style.display === "flex") {
+    andenNuvaerendeBolig.style.display = "none";
   } else {
-    nuværendeBolig.style.display = "none";
-  }
-}
-
-function openAndetNuværendeBolig() {
-  const andetNuværendeBolig = document.querySelector("#andet-nuværende-bolig");
-  if (andetNuværendeBolig.style.display === "none") {
-    andetNuværendeBolig.style.display = "flex";
-  } else {
-    andetNuværendeBolig.style.display = "flex";
-  }
-}
-
-function closeAndetNuværendeBolig() {
-  const andetNuværendeBolig = document.querySelector("#andet-nuværende-bolig");
-  if (andetNuværendeBolig.style.display === "flex") {
-    andetNuværendeBolig.style.display = "none";
-  } else {
-    andetNuværendeBolig.style.display = "none";
+    andenNuvaerendeBolig.style.display = "none";
   }
 }

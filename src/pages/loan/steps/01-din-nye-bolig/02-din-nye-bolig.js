@@ -1,8 +1,33 @@
 import Link from "next/link";
 import StepsMobile from "../../../../../components/StepsMobile";
+import Context from "../../../../../components/Context";
+import { useState, useContext } from "react";
 
 Link;
 export default function Finansiering() {
+  const context = useContext(Context);
+
+  // Nye Bolig Price
+  function setNyeBoligPris(e) {
+    context.setNyeBolig((previous) => ({ ...previous, pris: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Payment
+  function setNyeBoligBetaling(e) {
+    context.setNyeBolig((previous) => ({ ...previous, betaling: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Income
+  function setNyeBoligIndkomst(e) {
+    context.setNyeBolig((previous) => ({ ...previous, indkomst: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Debt
+  function setNyeBoligGaeld(e) {
+    context.setNyeBolig((previous) => ({ ...previous, gaeld: e.target.value }));
+    console.log(e.target.value);
+  }
+
   return (
     <>
       {/* Back and Steps Bar */}
@@ -26,14 +51,14 @@ export default function Finansiering() {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form>
+        <form id="nyeBoligForm2">
           <h2>Finansiering af nye bolig</h2>
           {/* Nye Bolig Prisen  */}
           <div className="flex-column-left field">
             <label htmlFor="ny_bolig_prisen">Hvad ønsker du at købe bolig for?</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="ny_bolig_prisen" id="ny_bolig_prisen" placeholder="" minLength="2" required />
+              <input type="number" name="ny_bolig_prisen" id="ny_bolig_prisen" placeholder="" minLength="2" required onChange={setNyeBoligPris} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
@@ -42,7 +67,7 @@ export default function Finansiering() {
             <label htmlFor="ny_bolig_udbetaling">Hvor meget kan du selv lægge til udbetaling i boligen? Inkludér evt. overskud fra salg af din nuværende bolig.</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="ny_bolig_udbetaling" id="ny_bolig_udbetaling" placeholder="" minLength="2" required />
+              <input type="number" name="ny_bolig_udbetaling" id="ny_bolig_udbetaling" placeholder="" minLength="2" required onChange={setNyeBoligBetaling} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
@@ -56,7 +81,7 @@ export default function Finansiering() {
             <label htmlFor="husstandsindkomst">Månedlig husstandsindkomst (før skat)</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="husstandsindkomst" id="husstandsindkomst" placeholder="" minLength="2" required />
+              <input type="number" name="husstandsindkomst" id="husstandsindkomst" placeholder="" minLength="2" required onChange={setNyeBoligIndkomst} />
               <span className="error-message">Enter a valid value</span>
             </div>
             <span className="smaller">(Inkludér eks. løn, folkepension, SU, sociale ydelser og lignende)</span>
@@ -66,14 +91,14 @@ export default function Finansiering() {
             <label htmlFor="anden_gæld_first">Hvor meget anden gæld har du/I efter boligkøbet?</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="anden_gæld_first" id="anden_gæld_first" placeholder="" minLength="2" required />
+              <input type="number" name="anden_gæld_first" id="anden_gæld_first" placeholder="" minLength="2" required onChange={setNyeBoligGaeld} />
               <span className="error-message">Enter a valid value</span>
             </div>
             <span className="smaller">(Inkludér eks. billån, forbrugslån, lån i andre boliger der ikke sælges og lignende)</span>
           </div>
           {/* Submit  */}
           <div className="flex-row-center">
-            <Link className="btn-form" onClick={openSteps} href="/loan/steps/01-din-nye-bolig/03-din-nye-bolig">
+            <Link className="btn-form" href="/loan/steps/01-din-nye-bolig/03-din-nye-bolig">
               Fortsæt
             </Link>
           </div>

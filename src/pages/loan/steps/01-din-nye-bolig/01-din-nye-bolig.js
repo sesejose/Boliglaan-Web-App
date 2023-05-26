@@ -6,8 +6,29 @@ import { useState, useContext } from "react";
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
 
-  function setEjerEllerAndel(e) {
-    context.setNyeBolig((prevNyeBolig) => ({ ...prevNyeBolig, type: e.target.value }));
+  // Nye Bolig type
+  function setNyeBoligType(e) {
+    context.setNyeBolig((previous) => ({ ...previous, type: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Adresse
+  function setNyeBoligAdresse(e) {
+    context.setNyeBolig((previous) => ({ ...previous, adresse: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Postnr
+  function setNyeBoligPostnr(e) {
+    context.setNyeBolig((previous) => ({ ...previous, postnr: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig By
+  function setNyeBoligBy(e) {
+    context.setNyeBolig((previous) => ({ ...previous, by: e.target.value }));
+    console.log(e.target.value);
+  }
+  // Nye Bolig Land
+  function setNyeBoligLand(e) {
+    context.setNyeBolig((previous) => ({ ...previous, land: e.target.value }));
     console.log(e.target.value);
   }
 
@@ -34,7 +55,7 @@ export default function DinNyeBolig(props) {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligForm">
+        <form id="nyeBoligFormOne">
           <h2>Din nye bolig</h2>
           <p>For at bankerne kan komme med et tilbud på din økonomi, er de nødt til at vide noget omkring dine ønsker og behov.</p>
           <fieldset className="flex-column-left">
@@ -43,10 +64,10 @@ export default function DinNyeBolig(props) {
             </div>
             {/* Ejer eller Andel  */}
             <div className="radio-toolbar">
-              <input type="radio" id="nye_bolig_ejersbolig" name="nye_bolig_andel_eller_ejerbolig" value="Ejersbolig" onClick={setEjerEllerAndel} />
+              <input type="radio" id="nye_bolig_ejersbolig" name="nye_bolig_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setNyeBoligType} />
               <label htmlFor="nye_bolig_ejersbolig">Ejersbolig</label>
 
-              <input type="radio" id="nye_bolig_andelsbolig" name="nye_bolig_andel_eller_ejerbolig" value="Andelsbolig" />
+              <input type="radio" id="nye_bolig_andelsbolig" name="nye_bolig_andel_eller_ejerbolig" value="Andelsbolig" required onClick={setNyeBoligType} />
               <label htmlFor="nye_bolig_andelsbolig">Andelsbolig</label>
             </div>
           </fieldset>
@@ -57,7 +78,7 @@ export default function DinNyeBolig(props) {
             {/* Adresse  */}
             <div className="flex-column-left field">
               <label htmlFor="adresse_nye_bolig">Adresse</label>
-              <input type="text" name="adresse_nye_bolig" id="adresse_nye_bolig" placeholder="Adresse" minLength="2" required />
+              <input type="text" name="adresse_nye_bolig" id="adresse_nye_bolig" placeholder="Adresse" minLength="2" required onChange={setNyeBoligAdresse} />
               <span className="error-message">Enter a valid value</span>
             </div>
 
@@ -65,26 +86,26 @@ export default function DinNyeBolig(props) {
               {/* Postnr.  */}
               <div className="flex-column-left field">
                 <label htmlFor="postnr_nye_bolig">Postnr.</label>
-                <input type="text" name="postnr_nye_bolig" id="postnr_nye_bolig" placeholder="Postnr." minLength="4" required />
+                <input type="text" name="postnr_nye_bolig" id="postnr_nye_bolig" placeholder="Postnr." minLength="4" required onChange={setNyeBoligPostnr} />
                 <span className="error-message">Enter a valid value</span>
               </div>
               {/* By  */}
               <div className="flex-column-left field">
                 <label htmlFor="by_nye_bolig">By</label>
-                <input type="text" name="by_nye_bolig" id="by_nye_bolig" placeholder="By" minLength="2" required />
+                <input type="text" name="by_nye_bolig" id="by_nye_bolig" placeholder="By" minLength="2" required onChange={setNyeBoligBy} />
                 <span className="error-message">Enter a valid value</span>
               </div>
             </div>
             {/* Nye Bolig Land */}
             <div className="flex-column-left field">
-              <label htmlFor="nye_bolig_land">Land</label>
-              <input type="text" name="nye_bolig_land" id="nye_bolig_land" placeholder="Land" minLength="2" required />
+              <label htmlFor="land_nye_bolig">Land</label>
+              <input type="text" name="land_nye_bolig" id="land_nye_bolig" placeholder="Land" minLength="2" required onChange={setNyeBoligLand} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
           {/* Submit  */}
           <div className="flex-row-center">
-            <Link className="btn-form" href="/loan/steps/01-din-nye-bolig/02-din-nye-bolig">
+            <Link className="btn-form" href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}>
               Fortsæt
             </Link>
           </div>
@@ -103,10 +124,8 @@ function openSteps() {
   }
 }
 
-// onClick={submit}
-
-// function submit() {
-//   const form = document.getElementById("nyeBoligForm");
-//   form.submit;
-//   // document.getElementById("nyeBoligForm").submit()
+// function submit(e) {
+//   // e.preventDefault();
+//   window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
+//   document.getElementById("nyeBoligFormOne").submit();
 // }

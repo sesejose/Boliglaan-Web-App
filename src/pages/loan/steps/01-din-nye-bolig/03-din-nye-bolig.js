@@ -45,7 +45,7 @@ export default function Vurdering() {
             <div>Gældsfaktoren beregnes ved at dividere gæld med årlig indkomst før skat. Er tallet under 5, vil de fleste banker kunne tilbyde et boliglån.</div>
           </div>
           <div className="flex-row-center">
-            <Link className="btn-form" onClick={openSteps} href="/loan/steps/02-din-boligsituation/01-din-boligsituation">
+            <Link className="btn-form" href="/loan/steps/02-din-boligsituation/01-din-boligsituation">
               Videre til næste trin
             </Link>
           </div>

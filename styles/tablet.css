@@ -660,11 +660,12 @@
 
   #chat {
     /* height: 80vh; */
+    width: 40%;
     padding: var(--p-medium);
-    margin: var(--mtb-medium);
+    /* margin: var(--mtb-medium); */
   }
 
   .chat-container {
-    width: 40%;
+    width: 100%;
   }
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import nordea from "../public/nordea.svg";
 import jyskebank from "../public/jyskebank.svg";
-import danskebank from "../public/nordea.svg";
+import danskebank from "../public/danskebank.svg";
 import nykredit from "../public/nykredit.svg";
 import sydbank from "../public/sydbank.svg";
 
