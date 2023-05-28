@@ -2,9 +2,94 @@ import StepsMobile from "../../../../../components/StepsMobile";
 import Link from "next/link";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
+import { insertAnsoegning } from "../../../../../components/Db";
+import { useEffect } from "react";
 
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
+
+  // What is in the table of Nye Bolig
+  const [orders, setOrders] = useState([]);
+  // Nye Bolig ID
+  const [orderId, setOrderId] = useState();
+
+  // Fetching Orders from Supabase (Nye Bolig table)
+  useEffect(() => {
+    async function getOrders() {
+      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyebolig";
+      const headers = {
+        "Content-Type": "application/json",
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
+        Prefer: "return=minimal",
+      };
+      const options = {
+        method: "GET",
+        headers: headers,
+      };
+      const body = {
+        body: "false",
+      };
+      // Await then execute the code.
+      const res = await fetch(url, options, body); // Fetchs the data (await)
+      const orders = await res.json(); //When it's done getting it
+      setOrders(orders);
+      console.log(orders);
+      // generateNewId(orders);
+    }
+    getOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  //  function generateNewId(arr) {
+  // arr.forEach((item) => {
+  //   if (item.id === orderId) {
+  //     setOrderId(item.id + 1);
+  //     console.log(item.id);
+  //   }
+  // });
+
+  // setOrderId(arr[arr.length - 1].id + 1);
+
+  // console.log(orderId);
+  // }
+
+  function errorMessage() {
+    // const postnrError = document.querySelector(".error-message");
+    //Number
+    // if (isNaN(document.getElementById("postnr").value)) {
+    //   postnrError.style.display = "flex";
+    // }
+    setOrderId(orders[orders.length - 1].id + 1);
+    console.log(orders);
+    console.log(orderId);
+  }
+
+  // Function Submit
+  function submit(e) {
+    e.preventDefault();
+    postNyeBolig();
+  }
+
+  async function postNyeBolig() {
+    const response = await insertAnsoegning({
+      id: orderId,
+      type: "Andel",
+      adresse: "Rubinsteinsvej 14, 2tv",
+      postnr: 2450,
+      by: "København",
+      land: "Danmark",
+      pris: 400000,
+      betaling: 1800000,
+      indkomst: 70000,
+      gaeld: 500000,
+    });
+    // console.log(response);
+    if (response && response.length) {
+      setPaymentCompleted(true);
+      console.log("Works!");
+    }
+  }
 
   // Nye Bolig type
   function setNyeBoligType(e) {
@@ -105,7 +190,7 @@ export default function DinNyeBolig(props) {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligFormOne">
+        <form id="nyeBoligFormOne" onSubmit={submit}>
           <h2>Din nye bolig</h2>
           <p>For at bankerne kan komme med et tilbud på din økonomi, er de nødt til at vide noget omkring dine ønsker og behov.</p>
           <fieldset className="flex-column-left">
@@ -129,7 +214,7 @@ export default function DinNyeBolig(props) {
             <div className="flex-column-left field">
               <label htmlFor="adresse_nye_bolig">Adresse</label>
               <input type="text" name="adresse_nye_bolig" id="adresse_nye_bolig" placeholder="Adresse" minLength="2" required onChange={setNyeBoligAdresse} />
-              <span className="error-message">Enter a valid value</span>
+              <span className="nyebolig-error-msg">Enter a valid value</span>
             </div>
 
             <div className="two-inputs-row">
@@ -155,9 +240,9 @@ export default function DinNyeBolig(props) {
           </div>
           {/* Submit  */}
           <div className="flex-row-center">
-            <Link className="btn-form" href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}>
+            <button className="btn-form" type="submit" onClick={errorMessage} href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}>
               Fortsæt
-            </Link>
+            </button>
           </div>
         </form>
       </div>

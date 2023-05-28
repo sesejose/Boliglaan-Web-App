@@ -674,7 +674,7 @@ nav ul li a.close {
 .chat-icon {
   color: var(--white);
   background-color: var(--green);
-  padding: var(--p-medium);
+  padding: var(--p);
 }
 
 #chat {
@@ -684,7 +684,7 @@ nav ul li a.close {
   position: fixed;
   width: 100%;
   background-color: transparent;
-  /* z-index: 2; */
+  z-index: 2;
   bottom: 0;
   right: 0;
   padding: var(--p);

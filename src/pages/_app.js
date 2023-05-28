@@ -7,14 +7,14 @@ import Context from "../../components/Context";
 import Layout from "../../components/Layout";
 import { useState, useContext } from "react";
 import Basket from "../../components/Basket";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   const context = useContext(Context);
-  // Here we define the States --> ([]) if this is an array
-  // const [example, setExample] = useState([]);
 
   // 01. Din nye bolig
   const [nyeBolig, setNyeBolig] = useState({
+    id: "",
     type: "",
     adresse: "",
     postnr: "",
