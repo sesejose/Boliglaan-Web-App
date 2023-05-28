@@ -2,87 +2,36 @@ import StepsMobile from "../../../../../components/StepsMobile";
 import Link from "next/link";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
-import { insertAnsoegning } from "../../../../../components/Db";
 import { useEffect } from "react";
+import { postNyeBolig } from "../../../../../components/Post";
 
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
 
-  // What is in the table of Nye Bolig
-  const [orders, setOrders] = useState([]);
-  // Nye Bolig ID
-  const [orderId, setOrderId] = useState();
-
-  // Fetching Orders from Supabase (Nye Bolig table)
-  useEffect(() => {
-    async function getOrders() {
-      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyebolig";
-      const headers = {
-        "Content-Type": "application/json",
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
-        Prefer: "return=minimal",
-      };
-      const options = {
-        method: "GET",
-        headers: headers,
-      };
-      const body = {
-        body: "false",
-      };
-      // Await then execute the code.
-      const res = await fetch(url, options, body); // Fetchs the data (await)
-      const orders = await res.json(); //When it's done getting it
-      setOrders(orders);
-      console.log(orders);
-      // generateNewId(orders);
-    }
-    getOrders();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  //  function generateNewId(arr) {
-  // arr.forEach((item) => {
-  //   if (item.id === orderId) {
-  //     setOrderId(item.id + 1);
-  //     console.log(item.id);
-  //   }
-  // });
-
-  // setOrderId(arr[arr.length - 1].id + 1);
-
-  // console.log(orderId);
-  // }
-
   function errorMessage() {
-    // const postnrError = document.querySelector(".error-message");
-    //Number
-    // if (isNaN(document.getElementById("postnr").value)) {
-    //   postnrError.style.display = "flex";
-    // }
-    setOrderId(orders[orders.length - 1].id + 1);
-    console.log(orders);
-    console.log(orderId);
+    // setOrderId(orders[orders.length - 1].id + 1);
   }
 
-  // Function Submit
+  // Function Submit Nye Bolig 1
   function submit(e) {
     e.preventDefault();
-    postNyeBolig();
+    postBolig();
+    window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
   }
 
-  async function postNyeBolig() {
-    const response = await insertAnsoegning({
-      id: orderId,
-      type: "Andel",
-      adresse: "Rubinsteinsvej 14, 2tv",
-      postnr: 2450,
-      by: "København",
-      land: "Danmark",
-      pris: 400000,
-      betaling: 1800000,
-      indkomst: 70000,
-      gaeld: 500000,
+  // Patch Nye Bolig in Supabase
+  async function postBolig() {
+    const response = await postNyeBolig({
+      id: context.orderId,
+      type: context.nyeBolig.type,
+      adresse: context.nyeBolig.adresse,
+      postnr: context.nyeBolig.postnr,
+      by: context.nyeBolig.by,
+      land: context.nyeBolig.land,
+      pris: "",
+      betaling: "",
+      indkomst: "",
+      gaeld: "",
     });
     // console.log(response);
     if (response && response.length) {
@@ -240,7 +189,7 @@ export default function DinNyeBolig(props) {
           </div>
           {/* Submit  */}
           <div className="flex-row-center">
-            <button className="btn-form" type="submit" onClick={errorMessage} href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}>
+            <button className="btn-form" type="submit" onClick={errorMessage}>
               Fortsæt
             </button>
           </div>

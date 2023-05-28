@@ -2,10 +2,41 @@ import Link from "next/link";
 import StepsMobile from "../../../../../components/StepsMobile";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
+import { postNyeBolig } from "../../../../../components/Post";
 
 Link;
 export default function Finansiering() {
   const context = useContext(Context);
+
+  function errorMessage() {}
+
+  // Function Submit Nye Bolig 1
+  function submit(e) {
+    e.preventDefault();
+    post();
+    window.location.href = "/loan/steps/01-din-nye-bolig/03-din-nye-bolig";
+  }
+
+  // Patch Nye Bolig in Supabase
+  async function post() {
+    const response = await postNyeBolig({
+      id: context.orderId,
+      type: "",
+      adresse: "",
+      postnr: "",
+      by: "",
+      land: "",
+      pris: context.nyeBolig.pris,
+      betaling: context.nyeBolig.betaling,
+      indkomst: context.nyeBolig.indkomst,
+      gaeld: context.nyeBolig.gaeld,
+    });
+    // console.log(response);
+    if (response && response.length) {
+      setPaymentCompleted(true);
+      console.log("Works!");
+    }
+  }
 
   // Nye Bolig Price
   function setNyeBoligPris(e) {
@@ -51,7 +82,7 @@ export default function Finansiering() {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligForm2">
+        <form id="nyeBoligForm2" onSubmit={submit}>
           <h2>Finansiering af nye bolig</h2>
           {/* Nye Bolig Prisen  */}
           <div className="flex-column-left field">
@@ -98,9 +129,9 @@ export default function Finansiering() {
           </div>
           {/* Submit  */}
           <div className="flex-row-center">
-            <Link className="btn-form" href="/loan/steps/01-din-nye-bolig/03-din-nye-bolig">
+            <button className="btn-form" type="submit" onClick={errorMessage}>
               Fortsæt
-            </Link>
+            </button>
           </div>
         </form>
       </div>
