@@ -68,7 +68,7 @@ a.step-disabled svg {
 }
 
 .form-wrapper {
-  width: 100%;
+  width: 100vw;
   padding: var(--p-mobile-medium);
 }
 

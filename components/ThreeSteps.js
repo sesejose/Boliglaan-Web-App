@@ -13,12 +13,12 @@ export default function ThreeSteps() {
         <div className="fortael">
           <Image className="ikonfortael" src={ikonfortael} alt={""} width={"224.14"} height={"109.69"} priority sizes="(max-width: 700px) 100vw, 700px" />
           <div className="pt">
-            <h4>Få det bedste tilbud med vores enkle proces</h4>
+            <h4>Start med at fortælle os dine behov og ønsker</h4>
           </div>
-          <div className="pt">
+          <div>
             <p>
-              Hos Boliglån.dk tror vi på, at processen med at finde den rette boligfinansiering ikke behøver at være besværlig. Vi har udviklet en enkel og effektiv proces, der hjælper dig med at finde den bedste finansieringsløsning til dine behov.
-              Uanset om du er på udkig efter en boligkøberfinansiering, et realkreditlån eller en refinansiering, kan du nemt og hurtigt komme i gang ved at følge vores trin-for-trin-proces.
+              Start din rejse ved at udfylde vores enkle formular, hvor du kan give os oplysninger om dine økonomiske situation og dine ønsker til din kommende bolig. Vi bruger disse oplysninger til at finde de bedste lånetilbud, der passer til dine
+              behov.
             </p>
           </div>
         </div>
@@ -28,12 +28,12 @@ export default function ThreeSteps() {
         <div className="vaelg">
           <Image className="ikonvaelg" src={ikonvaelg} alt={""} width={"224.14"} height={"109.69"} priority sizes="(max-width: 700px) 100vw, 700px" />
           <div className="pt">
-            <h4>Få det bedste tilbud med vores enkle proces</h4>
+            <h4>Vi finder de bedste lånetilbud for dig</h4>
           </div>
-          <div className="pt">
+          <div>
             <p>
-              Hos Boliglån.dk tror vi på, at processen med at finde den rette boligfinansiering ikke behøver at være besværlig. Vi har udviklet en enkel og effektiv proces, der hjælper dig med at finde den bedste finansieringsløsning til dine behov.
-              Uanset om du er på udkig efter en boligkøberfinansiering, et realkreditlån eller en refinansiering, kan du nemt og hurtigt komme i gang ved at følge vores trin-for-trin-proces.
+              Vores ekspertteam gennemgår dine oplysninger og finder op til 7 forskellige lånetilbud fra vores samarbejdspartnere, der passer til dine ønsker og økonomi. Vi præsenterer derefter disse lånetilbud for dig, så du kan sammenligne og
+              træffe en informeret beslutning.
             </p>
           </div>
         </div>
@@ -43,13 +43,10 @@ export default function ThreeSteps() {
         <div className="skift">
           <Image className="ikonskift" src={ikonskift} alt={""} width={"224.14"} height={"109.69"} priority sizes="(max-width: 700px) 100vw, 700px" />
           <div className="pt">
-            <h4>Få det bedste tilbud med vores enkle proces</h4>
+            <h4>Vælg det bedste lånetilbud og skift bank let</h4>
           </div>
-          <div className="pt">
-            <p>
-              Hos Boliglån.dk tror vi på, at processen med at finde den rette boligfinansiering ikke behøver at være besværlig. Vi har udviklet en enkel og effektiv proces, der hjælper dig med at finde den bedste finansieringsløsning til dine behov.
-              Uanset om du er på udkig efter en boligkøberfinansiering, et realkreditlån eller en refinansiering, kan du nemt og hurtigt komme i gang ved at følge vores trin-for-trin-proces.
-            </p>
+          <div>
+            <p>Når du har valgt det bedste lånetilbud, hjælper vi dig med at skifte bank, hvis det er nødvendigt. Vi sørger for alt det praktiske, så du kan koncentrere dig om at nyde dit nye hjem. Og husk, vores service er helt gratis for dig!</p>
           </div>
         </div>
       </div>

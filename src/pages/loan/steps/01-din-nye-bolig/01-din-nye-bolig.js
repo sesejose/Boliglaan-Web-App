@@ -36,70 +36,43 @@ export default function DinNyeBolig(props) {
     <>
       {/* Modal intro  */}
       <div id="modal-intro" className="grid-center">
-        <div className="modal-container flex-column-center col-2-12">
-          <h2>Goft at vide inden du går i gang med din ansøgning</h2>
+        <div className="modal-container flex-column-center col-3-11">
+          {/* <div className="close-modal" onClick={hideModalIntro}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div> */}
+          <h2>Godt at vide inden du går i gang med din ansøgning.</h2>
           <p className="small">
-            I gennem ansøgning process vi kommer at pørger dig om forskællige ting, bland andet den bolig du/I ønsker at købe, din/jeres boligsituation og hvis du/I har gælder i form af boliglån, realkreditlån, banklån eller SU lån på din/jeres
-            nuværende ejersbolig hvis der er en. Vi kommer også at spørger om husholdindkomster, opsparinger og andre gæld som kassekredit og banklån. Så anbefælles at have disse informationer inden du går i gang for at fylde fælterne ind.
+            I gennem ansøgning process vi kommer at spørger dig om forskællige ting, så anbefælles at have disse informationer med dig inden du går i gang med din ansøgning. <strong>Her en liste med hvad kommer vi at spørger dig om:</strong>
           </p>
-          <br></br>
-          <p className="small">Her en liste med hvad kommer vi at spørger dig:</p>
 
           <div className="flex-row-modal">
-            <ul className="bullet">
-              <li>
-                <strong>Boligsituation</strong>
-              </li>
-              <li>Boligen type</li>
-              <li>Boligen adresse</li>
-              <li>Boligen værd</li>
-              <li>Boliglån type (hvis der er)</li>
-              <li>Boliglån restgæld, rente og rente type (hvis der er)</li>
-            </ul>
-            <ul className="bullet">
-              <li>
-                <strong>Ejendele</strong>
-              </li>
-              <li>Køretøj mærke, model, årgang og ejerforholdene</li>
-              <li>Køretøj lån (hvis der er)</li>
-              <li>Køretøj låneudbyder, skylder og månedlige ydelse</li>
-            </ul>
-            <ul className="bullet">
-              <li>
-                <strong>Indtægter</strong>
-              </li>
-              <li>Månedlig husstandsindkomst (før skat)</li>
-              <li>Arbejdsform og månedlige indkomst</li>
-              <li>Fagforening (hvis der er)</li>
-              <li>A-kasse (hvis der er)</li>
-            </ul>
-            <ul className="bullet">
-              <li>
-                <strong>Gæld</strong>
-              </li>
-              <li>SU lån (hvis der er)</li>
-              <li>Banklån (hvis der er)</li>
-              <li>Banklån udbyder</li>
-              <li>Restgæld på lån</li>
-              <li>Rentesats på lån</li>
-              <li>Rentetype og månedlige ydelse</li>
-            </ul>
-            <ul className="bullet">
-              <li>
-                <strong>Opsparing</strong>
-              </li>
-              <li>Din bank</li>
-              <li>Husstanden stående på opsparings og lønkonti</li>
-              <li>Renten på opsparingskontoen</li>
-              <li>Kassekredit (hvis der er)</li>
-              <li>Kassekreditten maksimale beløb, penge på den og rente</li>
-              <li>Aktier (hvis der er) og penge i den</li>
-              <li>Penge i private pensionsopsparing (hvis der er)</li>
-            </ul>
-          </div>
+            <p>
+              <strong>Boligsituation:</strong> Addresse og værd på af ejerbolig.(*) Boliglån type, restgæld, rente og rente type.(*)
+            </p>
 
-          <p className="small">Det er også en god idé at oprette en konto og log ind, så hvis du skal forlade vi gemmer alle informationer du har allerede indstat for når du kommer tilbage.</p>
-          <p>God fornjølse</p>
+            <p>
+              <strong>Ejendele:</strong> Køretøj mærke, model, årgang og ejerforholdene.(*) Køretøj lån, låneudbyder, skylder og månedlige ydelse.(*)
+            </p>
+
+            <p>
+              <strong>Indtægter:</strong> Månedlig husstandsindkomst(før skat). Arbejdsform og månedlige indkomst. Fagforening.(*) A-kasse.(*)
+            </p>
+
+            <p>
+              <strong>Gæld: </strong> SU lån.(*) Banklån.(*) Banklån udbyder, restgæld, rentesats, rentetype og månedlige ydelse.
+            </p>
+
+            <p>
+              <strong>Opsparing:</strong> Din bank. Husstanden stående på opsparings og lønkonti. Renten på opsparingskontoen. Kassekredit.(*) Kassekreditten maksimale beløb, penge på den og rente. Aktier (*) og penge i den. Penge i private
+              pensionsopsparing.(*)
+            </p>
+          </div>
+          <diV>
+            <p className="small">Det er også en god idé at oprette en konto og log ind, så hvis du skal forlade vi gemmer alle informationer du har allerede indstat for når du kommer tilbage.</p>
+          </diV>
+          {/* <p>God fornjølse</p> */}
           <div className="flex-row-center">
             <button className="btn-contact" onClick={hideModalIntro}>
               Fortsæt uden logge ind
