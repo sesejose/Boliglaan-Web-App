@@ -69,9 +69,10 @@
     height: auto;
   }
 
-  /* .phone {
-    padding: var(--ps);
-  } */
+  .person,
+  .basket-icon {
+    display: flex;
+  }
 
   #menu-desk {
     display: flex;

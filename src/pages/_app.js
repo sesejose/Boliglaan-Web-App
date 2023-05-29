@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps }) {
   // What is in the table of Nye Bolig
   const [orders, setOrders] = useState([]);
   // Nye Bolig ID
-  const [orderId, setOrderId] = useState(1);
+  const [orderId, setOrderId] = useState();
 
   // Fetch Orders from Supabase (Nye Bolig table)
   useEffect(() => {
@@ -106,7 +106,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   function generateNewId(arr) {
-    setOrderId(arr[arr.length - 1].id + 1);
+    setOrderId(arr[arr.length - 1].id + 3);
+    console.log(orderId);
   }
 
   //Gældsfaktor

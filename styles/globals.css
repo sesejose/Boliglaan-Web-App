@@ -575,6 +575,11 @@ nav ul li a.close {
   border-radius: var(--border-radius-10);
 }
 
+.person,
+.basket-icon {
+  display: none;
+}
+
 .contact {
   background-color: var(--ligh-blue);
   color: var(--white);
@@ -591,13 +596,17 @@ nav ul li a.close {
 }
 
 .close svg,
-.open svg,
 .basket-icon svg,
 .close-modal svg,
 .person svg,
 .phone svg .email svg,
 .contact svg {
   width: 1rem;
+  height: auto;
+}
+
+.open svg {
+  width: 24px;
   height: auto;
 }
 
@@ -629,7 +638,7 @@ nav ul li a.close {
 }
 
 .basket-icon {
-  display: flex;
+  /* display: flex; */
   flex-flow: row;
   position: relative;
   cursor: pointer;

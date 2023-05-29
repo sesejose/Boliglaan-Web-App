@@ -22,12 +22,12 @@ export default function DinNyeBolig(props) {
   // Patch Nye Bolig in Supabase
   async function postBolig() {
     const response = await postNyeBolig({
-      id: context.orderId,
-      type: context.nyeBolig.type,
-      adresse: context.nyeBolig.adresse,
-      postnr: context.nyeBolig.postnr,
-      by: context.nyeBolig.by,
-      land: context.nyeBolig.land,
+      id: "",
+      type: "",
+      adresse: "",
+      postnr: "",
+      by: "",
+      land: "",
       pris: "",
       betaling: "",
       indkomst: "",
@@ -103,9 +103,9 @@ export default function DinNyeBolig(props) {
               pensionsopsparing.(*)
             </p>
           </div>
-          <diV>
+          <div>
             <p className="small">Det er også en god idé at oprette en konto og log ind, så hvis du skal forlade vi gemmer alle informationer du har allerede indstat for når du kommer tilbage.</p>
-          </diV>
+          </div>
           {/* <p>God fornjølse</p> */}
           <div className="flex-row-center">
             <button className="btn-contact" onClick={hideModalIntro}>
