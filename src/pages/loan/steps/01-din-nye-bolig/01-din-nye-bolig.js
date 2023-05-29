@@ -16,7 +16,7 @@ export default function DinNyeBolig(props) {
   function submit(e) {
     e.preventDefault();
     postBolig();
-    window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
+    // window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
   }
 
   // Patch Nye Bolig in Supabase
