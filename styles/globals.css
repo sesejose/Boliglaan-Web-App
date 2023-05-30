@@ -340,6 +340,15 @@ section {
   color: var(--dark-blue);
 }
 
+.container-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
 .btn-card {
   /* width: 100%; */
   display: flex;
@@ -492,7 +501,7 @@ nav {
   align-items: center;
   flex-flow: row;
   width: fit-content;
-  /* gap: 0.667rem; */
+  gap: 0.667rem;
   /* fill: var(--green); */
 }
 
@@ -733,6 +742,10 @@ nav ul li a.close {
   box-shadow: var(--shadow);
   color: var(--white);
   margin-bottom: 9rem;
+}
+
+.chat-container h4 {
+  margin: 0;
 }
 
 .chat-supports-message {
@@ -1046,7 +1059,7 @@ nav ul li a.close {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .flex-row-left {
@@ -1544,6 +1557,27 @@ body {
 
 /* All the Modals */
 
+#modal-phone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+}
+
+#modal-phone .modal-container {
+  background-color: var(--green);
+  color: var(--white) !important;
+  box-shadow: var(--shadow);
+}
+
+#modal-phone h3 {
+  margin: var(--mb);
+}
+
+#modal-phone .btn-contact {
+  margin: var(--mt);
+}
+
 #modal-intro {
   /* grid-column: 3 / 11; */
   position: absolute;
@@ -1586,6 +1620,12 @@ body {
   gap: 1.25rem;
   margin: var(--mtb-medium);
   /* overflow: scroll; */
+}
+
+.flex-row-modal p {
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: normal;
 }
 
 .flex-row-modal ul li {

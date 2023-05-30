@@ -85,6 +85,7 @@ export default function DinNyeBolig(props) {
           <p className="small">
             I gennem ansøgning process vi kommer at spørger dig om forskællige ting, så anbefælles at have disse informationer med dig inden du går i gang med din ansøgning. <strong>Her en liste med hvad kommer vi at spørger dig om:</strong>
           </p>
+          <p className="small green">(*) I tilfælde af eksisterende.</p>
 
           <div className="flex-row-modal">
             <p>
@@ -112,14 +113,31 @@ export default function DinNyeBolig(props) {
             <p className="small">Det er også en god idé at oprette en konto og log ind, så hvis du skal forlade vi gemmer alle informationer du har allerede indstat for når du kommer tilbage.</p>
           </div>
           {/* <p>God fornjølse</p> */}
-          <div className="flex-row-center">
-            <button className="btn-contact" onClick={hideModalIntro}>
+          <div className="container-buttons">
+            <button className="btn-card-second" onClick={hideModalIntro}>
               Fortsæt uden logge ind
             </button>
-            <Link className="btn-contact" href={""}>
+            <Link className="btn-card" href={""}>
               Opret en konto
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Modal Phone  */}
+      <div id="modal-phone" className="">
+        <div className="modal-container flex-column-center col-3-11">
+          {/* <div className="close-modal" onClick={hideModalIntro}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div> */}
+          <h3>Du kan også ansøge med et opkald!</h3>
+          <p className="">Hvis du ønsker at tale med en repræsentant og ansøge telefonisk, kan du ringe til os på dette telefonnummer fra mandag til fredag ​​fra 8.00 til 15.00.</p>
+
+          <button className="btn-contact" onClick={closeModalPhone}>
+            Forstået
+          </button>
         </div>
       </div>
 
@@ -215,6 +233,25 @@ function openSteps() {
 
 function hideModalIntro() {
   document.querySelector("#modal-intro").classList.add("hiden");
+  openModalPhone();
+}
+
+function openModalPhone() {
+  const steps = document.querySelector("#modal-phone");
+  if (steps.style.display === "none") {
+    steps.style.display = "flex";
+  } else {
+    steps.style.display = "flex";
+  }
+}
+
+function closeModalPhone() {
+  const steps = document.querySelector("#modal-phone");
+  if (steps.style.display === "flex") {
+    steps.style.display = "none";
+  } else {
+    steps.style.display = "none";
+  }
 }
 
 // function submit(e) {

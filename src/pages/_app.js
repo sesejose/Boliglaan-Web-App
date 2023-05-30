@@ -12,6 +12,9 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
   const context = useContext(Context);
 
+  // Input chat
+  const [chatInput, setChatInput] = useState();
+
   // 01. Din nye bolig
   const [nyeBolig, setNyeBolig] = useState({
     id: "",
@@ -116,7 +119,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Context.Provider value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov }}>
+      <Context.Provider value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov, chatInput, setChatInput }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
