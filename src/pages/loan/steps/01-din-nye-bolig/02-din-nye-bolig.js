@@ -3,29 +3,34 @@ import StepsMobile from "../../../../../components/StepsMobile";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
 import { postNyeBolig } from "../../../../../components/Post";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { patchNyeBolig } from "../../../../../components/Patch";
 
 Link;
 export default function Finansiering() {
   const context = useContext(Context);
+  const router = useRouter();
 
-  function errorMessage() {}
-
+  function errorMessage(e) {}
   // Function Submit Nye Bolig 1
   function submit(e) {
     e.preventDefault();
-    post();
-    window.location.href = "/loan/steps/01-din-nye-bolig/03-din-nye-bolig";
+    patchBolig();
+    context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
+    console.log(context.laanebehov);
+    router.push(`/loan/steps/01-din-nye-bolig/03-din-nye-bolig`);
   }
 
   // Patch Nye Bolig in Supabase
-  async function post() {
-    const response = await postNyeBolig({
-      id: context.orderId,
-      type: "",
-      adresse: "",
-      postnr: "",
-      by: "",
-      land: "",
+  async function patchBolig() {
+    const response = await patchNyeBolig({
+      // id: 1,
+      // type: context.nyeBolig.type,
+      // adresse: context.nyeBolig.adresse,
+      // postnr: context.nyeBolig.postnr,
+      // by: context.nyeBolig.by,
+      // land: context.nyeBolig.land,
       pris: context.nyeBolig.pris,
       betaling: context.nyeBolig.betaling,
       indkomst: context.nyeBolig.indkomst,
@@ -40,12 +45,18 @@ export default function Finansiering() {
 
   // Nye Bolig Price
   function setNyeBoligPris(e) {
-    context.setNyeBolig((previous) => ({ ...previous, pris: e.target.value }));
+    // context.setNyeBolig((previous) => ({ ...previous, pris: e.target.value }));
+    context.setNyeBolig((previous) => ({ ...previous, pris: parseInt(e.target.value) }));
+    console.log(typeof context.nyeBolig.pris);
+    console.log(context.nyeBolig.pris);
     console.log(e.target.value);
   }
   // Nye Bolig Payment
   function setNyeBoligBetaling(e) {
-    context.setNyeBolig((previous) => ({ ...previous, betaling: e.target.value }));
+    // context.setNyeBolig((previous) => ({ ...previous, betaling: e.target.value }));
+    context.setNyeBolig((previous) => ({ ...previous, betaling: parseInt(e.target.value) }));
+    console.log(typeof context.nyeBolig.betaling);
+    console.log(context.nyeBolig.betaling);
     console.log(e.target.value);
   }
   // Nye Bolig Income
@@ -82,7 +93,7 @@ export default function Finansiering() {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligForm2" onSubmit={submit}>
+        <form id="nyeBoligFormTwo" onSubmit={submit}>
           <h2>Finansiering af nye bolig</h2>
           {/* Nye Bolig Prisen  */}
           <div className="flex-column-left field">
@@ -104,7 +115,7 @@ export default function Finansiering() {
           </div>
           {/* Din Lånbehov Calculate it with a function and Update */}
           <div className="amount-expected">
-            <h4>Lånebehov til boligkøb: 2.200.000 kr.</h4>
+            <h4>Lånebehov til boligkøb: {context.nyeBolig.pris - context.nyeBolig.betaling}</h4>
           </div>
           <h2>Indkomst og gæld</h2>
           {/* Husstandsindkomst  */}

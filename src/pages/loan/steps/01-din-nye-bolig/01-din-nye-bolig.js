@@ -3,7 +3,7 @@ import Link from "next/link";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
 import { useEffect } from "react";
-import { postNyeBolig } from "../../../../../components/Post";
+// import { postNyeBolig } from "../../../../../components/Post";
 import { patchNyeBolig } from "../../../../../components/Patch";
 import { useRouter } from "next/router";
 
@@ -16,24 +16,22 @@ export default function DinNyeBolig(props) {
   function submit(e) {
     e.preventDefault();
     postBolig();
-    context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
-    console.log(context.laanebehov);
     router.push(`/loan/steps/01-din-nye-bolig/02-din-nye-bolig`);
   }
 
   // Patch Nye Bolig in Supabase
   async function postBolig() {
     const response = await patchNyeBolig({
-      id: 1,
+      // id: 1,
       type: context.nyeBolig.type,
       adresse: context.nyeBolig.adresse,
       postnr: context.nyeBolig.postnr,
       by: context.nyeBolig.by,
       land: context.nyeBolig.land,
-      pris: "",
-      betaling: "",
-      indkomst: "",
-      gaeld: "",
+      // pris: "",
+      // betaling: "",
+      // indkomst: "",
+      // gaeld: "",
     });
     // console.log(response);
     if (response && response.length) {
@@ -57,7 +55,6 @@ export default function DinNyeBolig(props) {
   // Nye Bolig Postnr
   function setNyeBoligPostnr(e) {
     context.setNyeBolig((previous) => ({ ...previous, postnr: e.target.value }));
-    // context.setNyeBolig((previous) => ({ ...previous, postnr: parseInt(e.target.value) }));
     console.log(context.nyeBolig.postnr);
     console.log(typeof context.nyeBolig.postnr);
   }

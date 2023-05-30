@@ -1,7 +1,17 @@
 import Link from "next/link";
 import StepsMobile from "../../../../../components/StepsMobile";
+import Context from "../../../../../components/Context";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
 export default function Vurdering() {
+  const context = useContext(Context);
+  const router = useRouter();
+
+  function submit(e) {
+    router.push(`/loan/steps/02-din-boligsituation/01-din-boligsituation`);
+  }
+
   return (
     <>
       {/* Back and Steps Bar */}
@@ -33,21 +43,23 @@ export default function Vurdering() {
           <div>
             <hr className="divider" />
             <p className="bold">Egenbetaling af boligen</p>
-            <h3>25,00%</h3>
+            {/* 25,00% */}
+            <h3>{(context.nyeBolig.betaling * 100) / context.nyeBolig.pris}%</h3>
             <hr className="divider" />
             <div>Som hovedregel skal man have minimum 5% i udbetaling til et boligkøb. Har man det, vil de fleste banker låne penge til en ny bolig.</div>
           </div>
           <div>
             <hr className="divider" />
             <p className="bold">Din gældsfaktor efter boligkøb</p>
-            <h3>4,16</h3>
+            {/* <h3>4,16</h3> */}
+            <h3>{context.laanebehov / (context.nyeBolig.indkomst * 12)}</h3>
             <hr className="divider" />
             <div>Gældsfaktoren beregnes ved at dividere gæld med årlig indkomst før skat. Er tallet under 5, vil de fleste banker kunne tilbyde et boliglån.</div>
           </div>
           <div className="flex-row-center">
-            <Link className="btn-form" href="/loan/steps/02-din-boligsituation/01-din-boligsituation">
+            <button className="btn-form" onClick={submit}>
               Videre til næste trin
-            </Link>
+            </button>
           </div>
         </form>
       </div>
