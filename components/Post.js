@@ -1,6 +1,6 @@
 export async function postNyeBolig(payload) {
   const url = "https://wimczkvwnsepkvefdtzp.supabase.co";
-  const res = await fetch(url + "/rest/v1/nyebolig", {
+  const res = await fetch(url + "/rest/v1/nyeBolig", {
     method: "POST",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",

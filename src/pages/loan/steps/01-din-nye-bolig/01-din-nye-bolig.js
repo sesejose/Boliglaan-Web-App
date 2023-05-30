@@ -4,6 +4,7 @@ import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
 import { useEffect } from "react";
 import { postNyeBolig } from "../../../../../components/Post";
+import { patchNyeBolig } from "../../../../../components/Patch";
 
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
@@ -11,23 +12,24 @@ export default function DinNyeBolig(props) {
   function errorMessage() {
     // setOrderId(orders[orders.length - 1].id + 1);
   }
-
   // Function Submit Nye Bolig 1
   function submit(e) {
     e.preventDefault();
     postBolig();
+    context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
+    console.log(context.laanebehov);
     // window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
   }
 
   // Patch Nye Bolig in Supabase
   async function postBolig() {
-    const response = await postNyeBolig({
-      id: "",
-      type: "",
-      adresse: "",
-      postnr: "",
-      by: "",
-      land: "",
+    const response = await patchNyeBolig({
+      id: 1,
+      type: context.nyeBolig.type,
+      adresse: context.nyeBolig.adresse,
+      postnr: context.nyeBolig.postnr,
+      by: context.nyeBolig.by,
+      land: context.nyeBolig.land,
       pris: "",
       betaling: "",
       indkomst: "",
@@ -44,26 +46,32 @@ export default function DinNyeBolig(props) {
   function setNyeBoligType(e) {
     context.setNyeBolig((previous) => ({ ...previous, type: e.target.value }));
     console.log(e.target.value);
+    console.log(typeof context.nyeBolig.type);
   }
   // Nye Bolig Adresse
   function setNyeBoligAdresse(e) {
     context.setNyeBolig((previous) => ({ ...previous, adresse: e.target.value }));
     console.log(e.target.value);
+    console.log(typeof context.nyeBolig.adresse);
   }
   // Nye Bolig Postnr
   function setNyeBoligPostnr(e) {
     context.setNyeBolig((previous) => ({ ...previous, postnr: e.target.value }));
-    console.log(e.target.value);
+    // context.setNyeBolig((previous) => ({ ...previous, postnr: parseInt(e.target.value) }));
+    console.log(context.nyeBolig.postnr);
+    console.log(typeof context.nyeBolig.postnr);
   }
   // Nye Bolig By
   function setNyeBoligBy(e) {
     context.setNyeBolig((previous) => ({ ...previous, by: e.target.value }));
     console.log(e.target.value);
+    console.log(typeof context.nyeBolig.by);
   }
   // Nye Bolig Land
   function setNyeBoligLand(e) {
     context.setNyeBolig((previous) => ({ ...previous, land: e.target.value }));
     console.log(e.target.value);
+    console.log(typeof context.nyeBolig.land);
   }
 
   return (
@@ -149,10 +157,10 @@ export default function DinNyeBolig(props) {
             {/* Ejer eller Andel  */}
             <div className="radio-toolbar">
               <input type="radio" id="nye_bolig_ejersbolig" name="nye_bolig_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setNyeBoligType} />
-              <label htmlFor="nye_bolig_ejersbolig">Ejersbolig</label>
+              <label htmlFor="nye_bolig_ejersbolig">Ejer</label>
 
               <input type="radio" id="nye_bolig_andelsbolig" name="nye_bolig_andel_eller_ejerbolig" value="Andelsbolig" required onClick={setNyeBoligType} />
-              <label htmlFor="nye_bolig_andelsbolig">Andelsbolig</label>
+              <label htmlFor="nye_bolig_andelsbolig">Andel</label>
             </div>
           </fieldset>
           {/* Nye Bolig Adresse */}
@@ -170,7 +178,7 @@ export default function DinNyeBolig(props) {
               {/* Postnr.  */}
               <div className="flex-column-left field">
                 <label htmlFor="postnr_nye_bolig">Postnr.</label>
-                <input type="text" name="postnr_nye_bolig" id="postnr_nye_bolig" placeholder="Postnr." minLength="4" required onChange={setNyeBoligPostnr} />
+                <input type="number" name="postnr_nye_bolig" id="postnr_nye_bolig" placeholder="Postnr." minLength="4" required onChange={setNyeBoligPostnr} />
                 <span className="error-message">Enter a valid value</span>
               </div>
               {/* By  */}

@@ -71,7 +71,8 @@ function MyApp({ Component, pageProps }) {
     nylaan: "",
     skalsaelges: "",
   });
-
+  // Lånebehov
+  const [laanebehov, setLaanebehov] = useState({});
   // What is in the table of Nye Bolig
   const [orders, setOrders] = useState([]);
   // Nye Bolig ID
@@ -80,7 +81,7 @@ function MyApp({ Component, pageProps }) {
   // Fetch Orders from Supabase (Nye Bolig table)
   useEffect(() => {
     async function getOrders() {
-      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyebolig";
+      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyeBolig";
       const headers = {
         "Content-Type": "application/json",
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
@@ -108,13 +109,14 @@ function MyApp({ Component, pageProps }) {
   function generateNewId(arr) {
     setOrderId(arr[arr.length - 1].id + 3);
     console.log(orderId);
+    console.log(typeof orderId);
   }
 
   //Gældsfaktor
 
   return (
     <>
-      <Context.Provider value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig }}>
+      <Context.Provider value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
