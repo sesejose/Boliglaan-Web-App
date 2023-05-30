@@ -90,6 +90,7 @@
   --border-radius-bottom-20: 0px 0px 20px 20px;
 
   /* Slider  */
+  --slider-height-percentage: 100% !important;
   --slider-height-percentage-tablet: 600px !important;
   --slider-height-percentage-desktop: 400px !important;
 
@@ -250,7 +251,7 @@ p {
 /* Alignment */
 .text-center {
   display: inline-flex;
-  /* text-align: center; */
+  text-align: center !important;
   justify-content: center;
   flex-wrap: wrap;
   word-wrap: break-word;
@@ -287,6 +288,16 @@ section {
 
 /* Buttons */
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: var(--green);
+  -webkit-background-color: var(--green);
+  -ms-background-color: var(--green);
+  -moz-background-color: var(--green);
+}
+
 .btn {
   /* width: 100%; */
   display: flex;
@@ -301,6 +312,9 @@ section {
   text-decoration: none;
   color: var(--white);
   background-color: var(--green);
+  -webkit-background-color: var(--green);
+  -ms-background-color: var(--green);
+  -moz-background-color: var(--green);
   border-radius: var(--border-radius-40);
   gap: 1.25rem;
   margin: var(--mtb);
@@ -330,6 +344,9 @@ section {
   text-decoration: none;
   color: var(--green);
   background-color: transparent;
+  -webkit-background-color: transparent;
+  -ms-background-color: transparent;
+  -moz-background-color: transparent;
   border: 1px solid var(--green);
   border-radius: var(--border-radius-40);
   margin: var(--mtb);
@@ -363,6 +380,9 @@ section {
   text-decoration: none;
   color: var(--white);
   background-color: var(--green);
+  -webkit-background-color: var(--green);
+  -ms-background-color: var(--green);
+  -moz-background-color: var(--green);
   border-radius: var(--border-radius-40);
   gap: 1.25rem;
   margin: var(--mtb);
@@ -388,6 +408,9 @@ section {
   text-decoration: none;
   color: var(--green);
   background-color: transparent;
+  -webkit-background-color: transparent;
+  -ms-background-color: transparent;
+  -moz-background-color: transparent;
   border: 1px solid var(--green);
   border-radius: var(--border-radius-40);
   margin: var(--mtb);
@@ -417,6 +440,9 @@ section {
   text-decoration: none;
   color: var(--white);
   background-color: var(--ligh-blue);
+  -webkit-background-color: var(--ligh-blue);
+  -ms-background-color: var(--ligh-blue);
+  -moz-background-color: var(--ligh-blue);
   border-radius: var(--border-radius-40);
   gap: 1.25rem;
   margin: var(--mtb);
@@ -443,6 +469,9 @@ section {
   text-decoration: none;
   color: var(--green);
   background-color: transparent;
+  -webkit-background-color: transparent;
+  -ms-background-color: transparent;
+  -moz-background-color: transparent;
   border: 1px solid var(--green);
   border-radius: var(--border-radius-20);
   /* margin: var(--mtb); */
@@ -529,7 +558,7 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--ptb-medium);
+  /* padding: var(--ptb-medium); */
   border-bottom: 1px solid var(--border);
 }
 
@@ -540,6 +569,11 @@ nav ul li a {
   letter-spacing: auto;
   line-height: 2.5rem;
   color: var(--dark-blue);
+
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: var(--p-medium);
 }
 
 nav ul li a:hover {
@@ -702,7 +736,7 @@ nav ul li a.close {
   position: fixed;
   width: 100%;
   background-color: transparent;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   right: 0;
   padding: var(--p);
@@ -888,6 +922,12 @@ nav ul li a.close {
 .verdier {
   grid-column: 1 / -1;
   padding: var(--pt-medium);
+}
+
+.mission h4,
+.vision h4,
+.verdier h4 {
+  margin: var(--mt);
 }
 
 #our-partners {
@@ -1314,7 +1354,7 @@ footer ul li a.close {
   width: var(--control-button-width);
   height: var(--control-button-height);
   position: absolute;
-  /* z-index: 10; */
+  z-index: 0;
   top: calc(50% - (0.5 * var(--control-button-height)));
   border: none;
   color: var(--white) !important;
@@ -1326,6 +1366,7 @@ footer ul li a.close {
 .awssld__controls__arrow-right::before,
 .awssld__controls__arrow-right::after {
   background-color: var(--green) !important;
+  /* z-index: 0; */
 }
 
 .quote-container {
@@ -1587,7 +1628,7 @@ body {
   right: 0;
   justify-items: center;
   align-items: center;
-  z-index: 2;
+  z-index: 4;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
 }

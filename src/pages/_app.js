@@ -1,8 +1,9 @@
 // _app.js Whatever happens in here, happens on every page - perfect place to link stylesheet, or other general stuff
 import React from "react";
-import "../../styles/globals.css";
 import "../../styles/forms.css";
+import "../../styles/globals.css";
 import "../../styles/tablet.css";
+import "../../styles/desktop.css";
 import Context from "../../components/Context";
 import Layout from "../../components/Layout";
 import { useState, useContext } from "react";

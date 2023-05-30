@@ -15,7 +15,7 @@ export default function FaqQuestions() {
             du stadig har spørgsmål, er du velkommen til at kontakte vores supportteam, som altid står klar til at hjælpe dig.
           </p>
 
-          <div className="form-wrapper">
+          <div className="mtb">
             <form>
               {/* Din udbetaling  */}
               <div className="flex-column-left field">

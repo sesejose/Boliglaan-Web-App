@@ -5,9 +5,9 @@ export default function Video() {
     <>
       <div id="video" className="grid-center">
         <div className="col-3-11">
-          <div className="flex-row-center">
-            <h2>Kurser i boliglån og ejendomshandel</h2>
-            <h4 className="">
+          <div className="flex-column">
+            <h2 className="text-center">Kurser i boliglån og ejendomshandel</h2>
+            <h4 className="text-center">
               Har du brug for rådgivning eller vejledning i forbindelse med boliglån og ejendomshandel? Vi tilbyder kurser og undervisning, der dækker alt fra ansøgningsprocessen til rentesatser og gebyrer. Vælg mellem følgende kurser:
             </h4>
           </div>
