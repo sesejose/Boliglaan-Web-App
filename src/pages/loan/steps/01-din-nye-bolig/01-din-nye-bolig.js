@@ -9,20 +9,21 @@ import { useRouter } from "next/router";
 
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
-  const [next, setNext] = useState();
+  // const [next, setNext] = useState();
+  const router = useRouter();
 
   function errorMessage(e) {
-    setNext(e.target.value);
+    // setNext(e.target.value);
   }
   // Function Submit Nye Bolig 1
   function submit(e) {
     e.preventDefault();
-    postBolig();
+    // postBolig();
     context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
     console.log(context.laanebehov);
     // window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
     // return <Link href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}></Link>;
-    router.push(`/loan/steps/01-din-nye-bolig/${next}`);
+    router.push(`/loan/steps/01-din-nye-bolig/02-din-nye-bolig`);
   }
 
   // Patch Nye Bolig in Supabase
