@@ -5,12 +5,14 @@ import { useState, useContext } from "react";
 import { useEffect } from "react";
 import { postNyeBolig } from "../../../../../components/Post";
 import { patchNyeBolig } from "../../../../../components/Patch";
+import { useRouter } from "next/router";
 
 export default function DinNyeBolig(props) {
   const context = useContext(Context);
+  const [next, setNext] = useState();
 
-  function errorMessage() {
-    // setOrderId(orders[orders.length - 1].id + 1);
+  function errorMessage(e) {
+    setNext(e.target.value);
   }
   // Function Submit Nye Bolig 1
   function submit(e) {
@@ -19,7 +21,8 @@ export default function DinNyeBolig(props) {
     context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
     console.log(context.laanebehov);
     // window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
-    return <Link href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}></Link>;
+    // return <Link href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}></Link>;
+    router.push(`/loan/steps/01-din-nye-bolig/${next}`);
   }
 
   // Patch Nye Bolig in Supabase
