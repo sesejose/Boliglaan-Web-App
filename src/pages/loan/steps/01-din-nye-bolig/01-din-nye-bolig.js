@@ -15,7 +15,7 @@ export default function DinNyeBolig(props) {
   // Function Submit Nye Bolig 1
   function submit(e) {
     e.preventDefault();
-    // postBolig();
+    postBolig();
     context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
     console.log(context.laanebehov);
     router.push(`/loan/steps/01-din-nye-bolig/02-din-nye-bolig`);
