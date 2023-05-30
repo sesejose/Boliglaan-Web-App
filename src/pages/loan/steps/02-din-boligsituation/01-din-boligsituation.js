@@ -4,10 +4,18 @@ import Link from "next/link";
 import StepsMobile from "../../../../../components/StepsMobile";
 import { useRouter } from "next/router";
 import { patchNuvaerendeBolig } from "../../../../../components/PatchNuvaerende";
+// import { useEffect } from "react";
 
 export default function DinBoligsituation() {
   const context = useContext(Context);
   const router = useRouter();
+
+  // //Steps
+  // useEffect(() => {
+  //   const step = document.getElementById("step-din-nye-bolig");
+  //   console.log(step);
+  //   step.classList.remove("step-disabled");
+  // }, []);
 
   function errorMessage(e) {}
   // Function Submit Nye Bolig 1
@@ -306,18 +314,21 @@ export default function DinBoligsituation() {
 }
 
 function showNextEjendele() {
-  const btn = document.getElementById("btn-next-ejendele-one");
-  if (btn.style.display === "none") {
-    btn.style.display = "flex";
-    btn.style.justifyContent = "center";
+  const btn = document.getElementById("btn-next-boligsituation-one-two");
+  const btnEjendele = document.getElementById("btn-next-ejendele-one");
+  if (btnEjendele.style.display === "none") {
+    btnEjendele.style.display = "flex";
+    btnEjendele.style.justifyContent = "center";
   } else {
-    btn.style.display = "flex";
-    btn.style.justifyContent = "center";
+    btnEjendele.style.display = "flex";
+    btnEjendele.style.justifyContent = "center";
   }
+  btn.style.display = "none";
 }
 
 function showNextBoligSituation() {
   const btn = document.getElementById("btn-next-boligsituation-one-two");
+  const btnEjendele = document.getElementById("btn-next-ejendele-one");
   if (btn.style.display === "none") {
     btn.style.display = "flex";
     btn.style.justifyContent = "center";
@@ -325,6 +336,7 @@ function showNextBoligSituation() {
     btn.style.display = "flex";
     btn.style.justifyContent = "center";
   }
+  btnEjendele.style.display = "none";
 }
 
 function openSteps() {

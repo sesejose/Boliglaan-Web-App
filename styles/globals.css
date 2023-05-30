@@ -741,7 +741,7 @@ nav ul li a.close {
   border-radius: var(--border-radius-20);
   box-shadow: var(--shadow);
   color: var(--white);
-  margin-bottom: 9rem;
+  margin-bottom: 5rem;
 }
 
 .chat-container h4 {

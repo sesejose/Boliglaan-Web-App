@@ -80,6 +80,13 @@ function MyApp({ Component, pageProps }) {
   const [orders, setOrders] = useState([]);
   // Nye Bolig ID
   const [orderId, setOrderId] = useState();
+  // Steps
+  const [dinNyeBolig, setDinNyeBolig] = useState();
+  const [dinBoligSituation, setDinBoligSituation] = useState();
+  const [ejendele, setEjendele] = useState();
+  const [lidtOmDig, setLidtOmDig] = useState();
+  const [indtaegter, setIntaegter] = useState();
+  const [opsparing, setOpsparing] = useState();
 
   // Fetch Orders from Supabase (Nye Bolig table)
   useEffect(() => {
@@ -119,7 +126,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Context.Provider value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov, chatInput, setChatInput }}>
+      <Context.Provider
+        value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov, chatInput, setChatInput, dinNyeBolig, setDinNyeBolig }}
+      >
         <Layout>
           <Component {...pageProps} />
         </Layout>

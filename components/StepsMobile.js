@@ -4,7 +4,7 @@ export default function StepsMobile() {
   return (
     <>
       <div className="flex-row-space-around" id="steps">
-        <Link href={"/"} className="step">
+        <Link id="step-din-nye-bolig" href={"/"} className="step">
           <div>Din nye bolig</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -13,7 +13,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step">
+        <Link id="step-din-boligsituation" href={"/"} className="step">
           <div>Din boligsituation</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -22,7 +22,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step" aria-disabled="true">
+        <Link id="step-ejendele" href={"/"} className="step" aria-disabled="true">
           <div>Ejendele</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -31,7 +31,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step-disabled">
+        <Link id="step-lidt-om-dig" href={"/"} className="step">
           <div>Lidt om dig</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -40,7 +40,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step-disabled">
+        <Link id="step-intaegter" href={"/"} className="step">
           <div>Intægter</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -49,7 +49,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step-disabled">
+        <Link id="step-opsparing" href={"/"} className="step-disabled">
           <div>Opsparing</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -58,7 +58,7 @@ export default function StepsMobile() {
             </svg>
           </div>
         </Link>
-        <Link href={"/"} className="step-disabled">
+        <Link id="step-godkendelse" href={"/"} className="step-disabled">
           <div>Godkendelse</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">

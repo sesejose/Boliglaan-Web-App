@@ -693,7 +693,8 @@
   }
 
   #modal-phone {
-    right: 12rem;
+    width: 33.125rem;
+    right: 5rem;
   }
 
   .container-buttons {

@@ -46,6 +46,7 @@ export default function DinNyeBolig(props) {
     console.log(e.target.value);
     console.log(typeof context.nyeBolig.type);
   }
+
   // Nye Bolig Adresse
   function setNyeBoligAdresse(e) {
     context.setNyeBolig((previous) => ({ ...previous, adresse: e.target.value }));
