@@ -19,6 +19,7 @@ export default function DinNyeBolig(props) {
     context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
     console.log(context.laanebehov);
     // window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
+    return <Link href={"/loan/steps/01-din-nye-bolig/02-din-nye-bolig"}></Link>;
   }
 
   // Patch Nye Bolig in Supabase
