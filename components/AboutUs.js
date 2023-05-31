@@ -4,7 +4,7 @@ export default function AboutUs() {
       <div id="about-us" className="grid">
         {/* Om os  */}
         <div className="col-3-11">
-          <h2>Om Boliglån.dk</h2>
+          <h2>Om os</h2>
           <h4>Din pålidelige partner i boligfinansiering</h4>
           <p>
             Hos Boliglån.dk har vi specialiseret os i at gøre boligfinansiering enkel og overskuelig for vores kunder. Med vores ekspertise inden for både jura, økonomi og IT, er vi i stand til at tilbyde en omfattende platform, hvor vores kunder kan

@@ -103,13 +103,13 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href={""} className="basket-icon" onClick={openBasket}>
+              <Link href={""} onClick={openBasket}>
                 <p>Kurv</p>
               </Link>
             </li>
             <li>
-              <Link href={""} className="person">
-                <p className="smaller">Log ind</p>
+              <Link href={""} onClick={closeMenu}>
+                <p>Log ind</p>
               </Link>
             </li>
           </ul>
@@ -142,8 +142,8 @@ function openMenu() {
 function openBasket() {
   const basket = document.querySelector("#basket");
   const menu = document.querySelector("#menu");
-  if (basket.style.display === "flex") {
-    basket.style.display = "none";
+  if (basket.style.display === "none") {
+    basket.style.display = "flex";
   } else {
     basket.style.display = "flex";
   }

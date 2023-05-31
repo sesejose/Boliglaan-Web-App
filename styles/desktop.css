@@ -299,30 +299,53 @@
 
   .hero-home-container {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
-    row-gap: 0;
-    column-gap: 2.667rem;
-    justify-content: center;
-    align-items: center;
     background-color: var(--dark-blue);
     width: 100%;
     height: 550px;
+    /* height: 100vh; */
     overflow: hidden;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-image: url("../public/herohome.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
   }
   .hero-home-image {
     aspect-ratio: 1/1;
     width: 100%;
-    background-position-y: -20%;
-    /* height: auto; */
   }
 
   .hero-home-text {
-    height: 100vh;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: var(--dark-blue);
+    width: 100%;
+    height: auto;
     padding: var(--p-medium);
-    align-items: start;
-    /* height: auto; */
+    align-items: center;
+    /* background-color: transparent; */
+    color: var(--white);
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .hero-home-text h1 {
+    font-size: 2.25rem;
+    width: 30vw;
+    /* margin: var(--mt); */
+  }
+
+  .hero-home-text h4 {
+    width: 30vw;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .hero-home-text a {
+    /* width: 33vw; */
+    /* margin: 0 12rem; */
   }
 
   /* Forms  */

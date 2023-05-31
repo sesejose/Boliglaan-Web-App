@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function HeroHome() {
   return (
     <>
-      <div className="hero-home-container">
-        <div className="hero-home-image col-6-13"></div>
-        <div className="hero-home-text col-1-5">
+      <div className="hero-home-container grid-center">
+        {/* <div className="hero-home-image col-6-13"></div> */}
+        <div className="hero-home-text">
           <h1>Få tilbud fra flere banker på én gang</h1>
           <h4>Ansøg om et boliglån uden stress: Vi gør det simpelt og støttende</h4>
           <Link href={"../loan/steps/01-din-nye-bolig/01-din-nye-bolig"} className="btn flex-row">

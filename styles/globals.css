@@ -48,6 +48,7 @@
   --mlr: 0 1.25rem;
   --ml: 0 0 0 1.25rem;
   --mr: 0 1.25rem 0 0;
+  --mtb-small: 1.25rem 0;
   --mtb-medium: 2.5rem 0;
   --mt-medium: 2.5rem 0 0 0;
   --mtb-large: 5rem 0;
@@ -220,7 +221,7 @@ h4 {
   font-family: var(--font);
   font-size: 1.125rem;
   line-height: auto;
-  margin-bottom: var(--ms);
+  /* margin-bottom: var(--ms); */
 }
 
 p {
@@ -292,6 +293,10 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
+  color: var(--white);
+  -webkit-color: var(--white);
+  -ms-color: var(--white);
+  -moz-color: var(--white);
   background-color: var(--green);
   -webkit-background-color: var(--green);
   -ms-background-color: var(--green);
@@ -573,7 +578,7 @@ nav ul li a {
   width: 100%;
   height: auto;
   text-align: center;
-  padding: var(--p-medium);
+  padding: var(--p);
 }
 
 nav ul li a:hover {
@@ -653,8 +658,9 @@ nav ul li a.close {
   height: auto;
 }
 
-.close svg {
-  padding: var(--p);
+.btn-close {
+  color: var(--dark-blue);
+  background-color: var(--background) !important;
 }
 
 .how-many {
@@ -678,6 +684,7 @@ nav ul li a.close {
   background-color: var(--background);
   height: fit-content;
   border-top: 1px solid var(--border);
+  z-index: 5;
 }
 
 .basket-icon {
@@ -693,6 +700,8 @@ nav ul li a.close {
   overflow: scroll;
   text-align: center;
   width: 100%;
+  box-shadow: var(--shadow);
+  background-color: var(--background);
 }
 
 /* Cards Basket */
@@ -799,30 +808,46 @@ nav ul li a.close {
 
 .hero-home-container {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  row-gap: 0;
-  column-gap: 2.5rem;
-  justify-content: center;
-  align-items: center;
   background-color: var(--dark-blue);
   width: 100%;
+  height: 90vh;
+  /* aspect-ratio: 1 / 1; */
+  object-fit: cover;
+  background-image: url("../public/herohome.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
 }
 
 .hero-home-text {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  width: 100%;
+  width: 100vw;
+  height: 42vh;
   text-align: left;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   color: var(--white);
   padding: var(--p);
+  text-align: center;
+  /* margin-top: 20vh; */
   background-color: var(--dark-blue);
-  margin-top: -8rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.hero-home-text h1 {
+  font-size: 1.5rem;
+  margin: var(--mt);
+  /* font-weight: 600; */
+}
+
+.hero-home-text h4 {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .hero-home-image {
@@ -892,8 +917,9 @@ nav ul li a.close {
   grid-column: 1 / -1;
   position: relative;
   height: 550px;
-  background-image: url("../public/herohome.jpg");
+  background-image: url("../public/heroabout.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   color: var(--white);
