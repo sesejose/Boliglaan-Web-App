@@ -37,9 +37,7 @@ export default function Vurdering() {
       <div className="form-wrapper">
         <form>
           <h2>Vurdering af dit boligkøb</h2>
-
           <p>Din gældsfaktor og udbetaling til ny bolig er afgørende for, hvorvidt bankerne vil låne dig pengene. Hvis begge faktorer er inden for grænserne, forventer vi, at bankerne vil byde ind på din økonomi.</p>
-
           <div>
             <hr className="divider" />
             <p className="bold">Egenbetaling af boligen</p>

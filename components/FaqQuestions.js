@@ -34,17 +34,118 @@ export default function FaqQuestions() {
           </div>
 
           <Accordion>
+            {/* New item  */}
             <AccordionItem>
               <AccordionItemHeading>
-                <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>
+                <AccordionItemButton>Hvordan fungerer Boliglån.dk?</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.</p>
               </AccordionItemPanel>
             </AccordionItem>
+            {/* New item  */}
             <AccordionItem>
               <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+                <AccordionItemButton>Hvad skal jeg vide, når jeg søger boliglån?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvilke dokumenter har jeg brug for at ansøge om et boliglån?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvor lang tid tager det at få godkendt en boliglånsansøgning?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvordan kan jeg betale mit boliglån tilbage hurtigere?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvad er renten på et boliglån, og hvordan beregnes den?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvad er forskellen på fast og variabel rente?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvordan kan jeg finde ud af, om det er bedre at købe eller leje en bolig?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvad er afdrag, og hvordan fungerer det?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvordan kan jeg forbedre min kreditværdighed, så jeg kan få et bedre tilbud?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvordan kan jeg vælge det bedste boliglån for mig?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvad er forskellen på boliglån og realkreditlån?</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            {/* New item  */}
+            <AccordionItem>
+              <AccordionItemHeading>
+                <AccordionItemButton>Hvad er ÅOP på boliglån og huslån?</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor laboris sed adipisicing eu esse duis nulla non.</p>

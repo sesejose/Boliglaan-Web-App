@@ -1,4 +1,4 @@
-export async function patchNyeBolig(payload) {
+export async function patchNyeBolig(boligload) {
   const url = "https://wimczkvwnsepkvefdtzp.supabase.co";
   const res = await fetch(url + "/rest/v1/nyeBolig?id=eq.1", {
     method: "PATCH",
@@ -8,7 +8,7 @@ export async function patchNyeBolig(payload) {
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(boligload),
   });
 
   return await res.json();

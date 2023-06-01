@@ -33,11 +33,6 @@ export default function DinNyeBolig(props) {
       // indkomst: "",
       // gaeld: "",
     });
-    // console.log(response);
-    if (response && response.length) {
-      setPaymentCompleted(true);
-      console.log("Works!");
-    }
   }
 
   // Nye Bolig type

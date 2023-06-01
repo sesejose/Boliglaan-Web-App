@@ -719,12 +719,42 @@ nav ul li a.close {
   color: var(--dark-blue);
 }
 
-.card-basket-image,
 .card-image {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   background-image: url("../public/herokurser.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-top-10); /* left in desktop */
+}
+
+.video-one-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-image: url("../public/videoone.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-top-10); /* left in desktop */
+}
+
+.card-basket-image,
+.video-two-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-image: url("../public/videotwo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-top-10); /* left in desktop */
+}
+
+.video-three-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-image: url("../public/videothree.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--border-radius-top-10); /* left in desktop */
@@ -1019,7 +1049,7 @@ nav ul li a.close {
 
 .accordion__button {
   /* background-color: var(--black); */
-  color: var(--green);
+  color: var(--dark-blue) !important;
   cursor: pointer;
   padding: var(--p-medium);
   /* width: 100%; */
@@ -1034,7 +1064,8 @@ nav ul li a.close {
 
 .accordion__button:hover {
   /* background-color: var(--gray); */
-  color: var(--dark-blue);
+  color: var(--white) !important;
+  background-color: var(--green) !important;
 }
 
 .accordion__button:before {
