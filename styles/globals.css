@@ -842,12 +842,12 @@ nav ul li a.close {
   background-color: var(--dark-blue);
   width: 100%;
   height: 90vh;
-  /* aspect-ratio: 1 / 1; */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  background-image: url("../public/herohome.jpg");
-  background-size: cover;
+  background-image: url("../public/herohomemobile.jpg");
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   position: relative;
 }
 
