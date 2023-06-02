@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function StepsMobile() {
   return (
     <>
@@ -13,7 +15,7 @@ export default function StepsMobile() {
           </div>
         </div>
 
-        <button className="step">
+        <Link href={""} className="step">
           <div>Personlige oplysninger</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -21,8 +23,8 @@ export default function StepsMobile() {
               <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
             </svg>
           </div>
-        </button>
-        <button className="step" disabled>
+        </Link>
+        <Link href={""} className="step" disabled>
           <div>Betaling</div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
@@ -30,7 +32,7 @@ export default function StepsMobile() {
               <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
             </svg>
           </div>
-        </button>
+        </Link>
       </div>
     </>
   );

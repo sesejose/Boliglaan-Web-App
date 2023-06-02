@@ -65,7 +65,7 @@ function openChat() {
   if (chat.style.display === "none") {
     chat.style.display = "flex";
   } else {
-    chat.style.display = "none";
+    chat.style.display = "flex";
   }
 }
 
@@ -74,6 +74,6 @@ function closeChat() {
   if (chat.style.display === "flex") {
     chat.style.display = "none";
   } else {
-    chat.style.display = "flex";
+    chat.style.display = "none";
   }
 }

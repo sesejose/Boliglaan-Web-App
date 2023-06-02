@@ -327,7 +327,8 @@ button,
 
 .btn:hover {
   font-family: var(--font);
-  background-color: var(--dark-blue);
+  background-color: var(--ligh-blue);
+  /* border: 1px solid var(--green); */
 }
 
 .btn svg {
@@ -855,7 +856,7 @@ nav ul li a.close {
   flex-direction: column;
   gap: 1.25rem;
   width: 100vw;
-  height: 42vh;
+  height: 55vh;
   text-align: left;
   justify-content: center;
   align-items: center;

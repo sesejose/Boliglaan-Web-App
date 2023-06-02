@@ -309,14 +309,14 @@
     background-image: url("../public/herohome.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
   }
   .hero-home-image {
     aspect-ratio: 1/1;
     width: 100%;
   }
 
-  .hero-home-text {
+  /* .hero-home-text {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
@@ -325,10 +325,25 @@
     height: auto;
     padding: var(--p-medium);
     align-items: center;
-    /* background-color: transparent; */
     color: var(--white);
     text-align: left;
     gap: 2rem;
+  } */
+
+  .hero-home-text {
+    flex-direction: column;
+    /* justify-content: space-around; */
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--dark-blue);
+    width: 100%;
+    height: 100%;
+    padding: var(--p-medium);
+    /* align-items: center; */
+    color: var(--white);
+    text-align: left;
+    /* gap: 2rem; */
+    position: relative;
   }
 
   .hero-home-text h1 {
